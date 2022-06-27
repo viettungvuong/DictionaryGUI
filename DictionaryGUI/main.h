@@ -1,5 +1,10 @@
 #pragma once
-
+#include "main.h"
+#include <stdlib.h>
+#include "ternary.h"
+#include "Screen.h"
+#include "functions.h"
+TernarySearchTree listOfTree[3];
 namespace DictionaryGUI {
 
 	using namespace System;
@@ -121,6 +126,7 @@ namespace DictionaryGUI {
 			this->Controls->Add(this->textBox1);
 			this->Name = L"main";
 			this->Text = L"Dictionary";
+			this->Load += gcnew System::EventHandler(this, &main::main_Load);
 			this->panel1->ResumeLayout(false);
 			this->panel1->PerformLayout();
 			this->ResumeLayout(false);
@@ -129,6 +135,12 @@ namespace DictionaryGUI {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		listOfTree[2].search4keyword("apple");
+	}
+	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
+		srand(time(NULL)); //khoi tao random//Tung dang test cai nay
+		createSet(listOfTree);//khoi tao
+		int currentSet = 2;//mac dinh set se bang 2-dictionary 
 	}
 	};
 }
