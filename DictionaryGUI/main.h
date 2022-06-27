@@ -4,6 +4,9 @@
 #include "ternary.h"
 #include "Screen.h"
 #include "functions.h"
+#include <string>
+
+#include <msclr\marshal_cppstd.h>
 TernarySearchTree listOfTree[3];
 namespace DictionaryGUI {
 
@@ -76,12 +79,12 @@ namespace DictionaryGUI {
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(57, 46);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(980, 49);
+			this->textBox1->Size = System::Drawing::Size(1534, 49);
 			this->textBox1->TabIndex = 0;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(1111, 32);
+			this->button1->Location = System::Drawing::Point(1624, 32);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(231, 63);
 			this->button1->TabIndex = 1;
@@ -104,25 +107,26 @@ namespace DictionaryGUI {
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Location = System::Drawing::Point(627, 126);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1068, 689);
+			this->panel1->Size = System::Drawing::Size(1228, 689);
 			this->panel1->TabIndex = 3;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->BackColor = System::Drawing::SystemColors::ButtonHighlight;
+			this->label1->Dock = System::Windows::Forms::DockStyle::Fill;
 			this->label1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label1->Location = System::Drawing::Point(28, 28);
+			this->label1->Location = System::Drawing::Point(0, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(118, 42);
+			this->label1->Size = System::Drawing::Size(0, 42);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"label1";
 			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1729, 858);
+			this->ClientSize = System::Drawing::Size(1887, 858);
 			this->Controls->Add(this->panel1);
 			this->Controls->Add(this->listView1);
 			this->Controls->Add(this->button1);
@@ -138,7 +142,11 @@ namespace DictionaryGUI {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		listOfTree[2].search4keyword("apple");
+		msclr::interop::marshal_context context;
+		std::string input = context.marshal_as<std::string>(textBox1->Text);
+		std::string def = *(listOfTree[2].search4keyword(input))->definition;
+		System::String^ strConverted = gcnew System::String(def.c_str());
+		label1->Text = strConverted;
 	}
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
 		srand(time(NULL)); //khoi tao random//Tung dang test cai nay
