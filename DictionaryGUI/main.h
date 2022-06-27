@@ -23,6 +23,9 @@ namespace DictionaryGUI {
 		main(void)
 		{
 			InitializeComponent();
+			srand(time(NULL)); //khoi tao random//Tung dang test cai nay
+			createSet(listOfTree);//khoi tao
+			int currentSet = 2;//mac dinh set se bang 2-dictionary k
 			//
 			//TODO: Add the constructor code here
 			//
