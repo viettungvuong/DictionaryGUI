@@ -200,11 +200,8 @@ namespace DictionaryGUI {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		msclr::interop::marshal_context context;
-		std::string input = context.marshal_as<std::string>(textBox1->Text);
-		std::string def = *(listOfTree[2].search4keyword(input))->definition;
-		System::String^ strConverted = gcnew System::String(def.c_str());
-		label1->Text = strConverted;
+		std::string def = *(listOfTree[2].search4keyword(convertTo(textBox1->Text)))->definition;
+		label1->Text = convertFrom(def);
 	}
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
 		srand(time(NULL)); //khoi tao random//Tung dang test cai nay

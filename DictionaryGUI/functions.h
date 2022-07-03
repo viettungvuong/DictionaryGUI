@@ -13,3 +13,4 @@ void saveAllTree(TernarySearchTree* listOfTree);
 void resetAllDictionary(TernarySearchTree* listOfTree);
 void changeSet(int& currentSet);
 std::string convertTo(System::String^ input);
+System::String^ convertFrom(std::string input);

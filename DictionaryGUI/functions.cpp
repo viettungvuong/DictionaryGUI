@@ -1,4 +1,5 @@
 #include "functions.h"
+#include <msclr/marshal.h>
 
 void deletetree(TernaryTreeNode* root)
 {
@@ -13,7 +14,7 @@ void deletetree(TernaryTreeNode* root)
 
 void createSet(TernarySearchTree* listOfTree)
 {
-	for (int i = 0;i < NUMofSET;++i)
+	for (int i = 0; i < NUMofSET; ++i)
 	{
 		listOfTree[i].import_dictionary(i);
 	}
@@ -31,7 +32,7 @@ int childOfNode(TernaryTreeNode* node)//return number of child
 	return i;
 }
 
-void helper_saveTree(TernaryTreeNode* root, std::string str,int index)
+void helper_saveTree(TernaryTreeNode* root, std::string str, int index)
 {
 	if (!root)
 		return;
@@ -42,13 +43,13 @@ void helper_saveTree(TernaryTreeNode* root, std::string str,int index)
 		switch (index)
 		{
 		case 0://slang
-			fout.open("Library\\slang.txt",std::ios::app);
+			fout.open("Library\\slang.txt", std::ios::app);
 			break;
 		case 1://emotion
-			fout.open("Library\\emotional.txt",std::ios::app);
+			fout.open("Library\\emotional.txt", std::ios::app);
 			break;
 		case 2://dictionary
-			fout.open("Library\\dictionary.txt",std::ios::app);
+			fout.open("Library\\dictionary.txt", std::ios::app);
 			break;
 		default:
 			break;
@@ -57,11 +58,11 @@ void helper_saveTree(TernaryTreeNode* root, std::string str,int index)
 		fout.close();
 		str.pop_back();
 	}
-	helper_saveTree(root->left, str,index);
+	helper_saveTree(root->left, str, index);
 	str.push_back(root->ch);
-	helper_saveTree(root->mid, str,index);
+	helper_saveTree(root->mid, str, index);
 	str.pop_back();
-	helper_saveTree(root->right, str,index);
+	helper_saveTree(root->right, str, index);
 }
 
 void saveTree(TernaryTreeNode* root, int index)
@@ -70,7 +71,7 @@ void saveTree(TernaryTreeNode* root, int index)
 	helper_saveTree(root, str, index);
 }
 
-void saveAllTree(TernarySearchTree*listOfTree)
+void saveAllTree(TernarySearchTree* listOfTree)
 {
 	std::ofstream fA("Library\\slang.txt");
 	fA << "";
@@ -81,7 +82,7 @@ void saveAllTree(TernarySearchTree*listOfTree)
 	std::ofstream fC("Library\\dictionary.txt");
 	fC << "";
 	fC.close();
-	for (int i = 0;i < NUMofSET;++i)
+	for (int i = 0; i < NUMofSET; ++i)
 	{
 		saveTree(listOfTree[i].getRoot(), i);
 	}
@@ -89,7 +90,7 @@ void saveAllTree(TernarySearchTree*listOfTree)
 
 void resetAllDictionary(TernarySearchTree* listOfTree)
 {
-	for (int i = 0;i < NUMofSET;++i)
+	for (int i = 0; i < NUMofSET; ++i)
 	{
 		listOfTree[i].deleteTree();
 		listOfTree[i].import_dictionary(i, 1);
@@ -111,4 +112,11 @@ void changeSet(int& currentSet)
 	{
 		currentSet = 2;
 	}
+}
+std::string convertTo(System::String^ input) {
+	msclr::interop::marshal_context context;
+	return context.marshal_as<std::string>(input);
+}
+System::String^ convertFrom(std::string input) {
+	return gcnew System::String(input.c_str());
 }
