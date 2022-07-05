@@ -2,6 +2,7 @@
 #include <msclr\marshal_cppstd.h>
 
 
+
 void deletetree(TernaryTreeNode* root)
 {
 	if (!root)
@@ -120,11 +121,5 @@ std::string convertTo(System::String^ input) {
 }
 System::String^ convertFrom(std::string input) {
 	return gcnew System::String(input.c_str());
-	//}
-	//void wordOfTheDay() {
-	//	TernaryTreeNode* t = listOfTree[2].getRandomWord();
-	//	DictionaryGUI::main^ frm;
-	//	frm->word->Text = convertFrom(t->word);
-	//	frm->def->Text = convertFrom(*t->definition);
-	//}
 }
+

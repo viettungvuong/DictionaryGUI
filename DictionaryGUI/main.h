@@ -22,6 +22,11 @@ namespace DictionaryGUI {
 	public ref class main : public System::Windows::Forms::Form
 	{
 	public:
+		void wordOfTheDay(TernarySearchTree tree) {
+			TernaryTreeNode* t = tree.getRandomWord();
+			word->Text = convertFrom(t->word);
+			def->Text = convertFrom(*t->definition);
+		}
 		main(void)
 		{
 			InitializeComponent();
@@ -210,6 +215,7 @@ namespace DictionaryGUI {
 		createSet(listOfTree);//khoi tao
 		int currentSet = 2;//mac dinh set se bang 2-dictionary 
 		/*wordOfTheDay();*/
+		wordOfTheDay(listOfTree[2]);
 	}
 
 
