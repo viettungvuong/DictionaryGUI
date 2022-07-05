@@ -85,6 +85,7 @@ TernaryTreeNode* TernarySearchTree::getRandomWord(bool normal, int i) {
 			//de ti kiem cach random khac
 		}
 	}
+	tem->word = word;
 	if (normal) {
 		std::cout << word << " - " << *tem->definition << "\n";
 	}

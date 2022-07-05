@@ -31,6 +31,7 @@ struct TernaryTreeNode
 	char ch;
 	TernaryTreeNode* left = nullptr, * mid = nullptr, * right = nullptr;
 	std::string* definition = nullptr;
+	std::string word = "";
 };
 
 class TernarySearchTree

@@ -1,4 +1,5 @@
 #include "main.h"
+#include "functions.h"
 
 using namespace System;
 using namespace System::Windows::Forms;
@@ -10,3 +11,4 @@ int main() {
 	DictionaryGUI::main frm;
 	Application::Run(% frm);
 }
+
