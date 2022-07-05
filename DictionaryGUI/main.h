@@ -133,7 +133,6 @@ namespace DictionaryGUI {
 			this->label1->Size = System::Drawing::Size(1028, 542);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"test";
-			this->label1->Click += gcnew System::EventHandler(this, &main::label1_Click);
 			// 
 			// panel2
 			// 
