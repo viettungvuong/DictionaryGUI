@@ -64,20 +64,31 @@ namespace DictionaryGUI {
 	public:
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TabPage^ tabPage2;
-	private: System::Windows::Forms::GroupBox^ groupBox3;
+
 
 	private: System::Windows::Forms::GroupBox^ groupBox1;
 	private: System::Windows::Forms::GroupBox^ groupBox2;
 	private: System::Windows::Forms::Label^ label3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::Label^ label5;
+
 	private: System::Windows::Forms::Label^ label6;
 	private: System::Windows::Forms::RadioButton^ radioButton4;
 	private: System::Windows::Forms::RadioButton^ radioButton3;
 	private: System::Windows::Forms::RadioButton^ radioButton2;
 	private: System::Windows::Forms::RadioButton^ radioButton1;
 	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::GroupBox^ groupBox3;
+	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ label8;
+	private: System::Windows::Forms::RadioButton^ radioButton5;
+	private: System::Windows::Forms::RadioButton^ radioButton6;
+	private: System::Windows::Forms::RadioButton^ radioButton7;
+	private: System::Windows::Forms::RadioButton^ radioButton8;
+	private: System::Windows::Forms::Label^ label9;
+	private: System::Windows::Forms::Label^ label10;
+	private: System::Windows::Forms::Button^ button3;
+
 
 	protected:
 
@@ -123,8 +134,6 @@ namespace DictionaryGUI {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
-			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
@@ -136,13 +145,23 @@ namespace DictionaryGUI {
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->label8 = (gcnew System::Windows::Forms::Label());
+			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton7 = (gcnew System::Windows::Forms::RadioButton());
+			this->radioButton8 = (gcnew System::Windows::Forms::RadioButton());
+			this->label9 = (gcnew System::Windows::Forms::Label());
+			this->label10 = (gcnew System::Windows::Forms::Label());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->tabPage2->SuspendLayout();
-			this->groupBox3->SuspendLayout();
 			this->groupBox1->SuspendLayout();
+			this->groupBox3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -272,25 +291,6 @@ namespace DictionaryGUI {
 			this->tabPage2->Text = L"Can you guess it!\?";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
-			// groupBox3
-			// 
-			this->groupBox3->Controls->Add(this->label5);
-			this->groupBox3->Location = System::Drawing::Point(721, 30);
-			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Size = System::Drawing::Size(712, 870);
-			this->groupBox3->TabIndex = 0;
-			this->groupBox3->TabStop = false;
-			this->groupBox3->Text = L"Can you guess its definition\?";
-			// 
-			// label5
-			// 
-			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(30, 124);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(70, 25);
-			this->label5->TabIndex = 0;
-			this->label5->Text = L"label5";
-			// 
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->label7);
@@ -412,6 +412,117 @@ namespace DictionaryGUI {
 			this->label7->TabIndex = 9;
 			this->label7->Text = L"def here";
 			// 
+			// groupBox3
+			// 
+			this->groupBox3->Controls->Add(this->label5);
+			this->groupBox3->Controls->Add(this->label8);
+			this->groupBox3->Controls->Add(this->radioButton5);
+			this->groupBox3->Controls->Add(this->radioButton6);
+			this->groupBox3->Controls->Add(this->radioButton7);
+			this->groupBox3->Controls->Add(this->radioButton8);
+			this->groupBox3->Controls->Add(this->label9);
+			this->groupBox3->Controls->Add(this->label10);
+			this->groupBox3->Controls->Add(this->button3);
+			this->groupBox3->Location = System::Drawing::Point(721, 27);
+			this->groupBox3->Name = L"groupBox3";
+			this->groupBox3->Size = System::Drawing::Size(718, 870);
+			this->groupBox3->TabIndex = 10;
+			this->groupBox3->TabStop = false;
+			this->groupBox3->Text = L"Can you guess its meaning\?";
+			// 
+			// label5
+			// 
+			this->label5->AutoSize = true;
+			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(21, 232);
+			this->label5->Name = L"label5";
+			this->label5->Size = System::Drawing::Size(102, 29);
+			this->label5->TabIndex = 9;
+			this->label5->Text = L"def here";
+			// 
+			// label8
+			// 
+			this->label8->AutoSize = true;
+			this->label8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(21, 203);
+			this->label8->Name = L"label8";
+			this->label8->Size = System::Drawing::Size(131, 29);
+			this->label8->TabIndex = 8;
+			this->label8->Text = L"Definition:";
+			// 
+			// radioButton5
+			// 
+			this->radioButton5->AutoSize = true;
+			this->radioButton5->Location = System::Drawing::Point(26, 595);
+			this->radioButton5->Name = L"radioButton5";
+			this->radioButton5->Size = System::Drawing::Size(165, 29);
+			this->radioButton5->TabIndex = 7;
+			this->radioButton5->TabStop = true;
+			this->radioButton5->Text = L"radioButton5";
+			this->radioButton5->UseVisualStyleBackColor = true;
+			// 
+			// radioButton6
+			// 
+			this->radioButton6->AutoSize = true;
+			this->radioButton6->Location = System::Drawing::Point(26, 507);
+			this->radioButton6->Name = L"radioButton6";
+			this->radioButton6->Size = System::Drawing::Size(165, 29);
+			this->radioButton6->TabIndex = 6;
+			this->radioButton6->TabStop = true;
+			this->radioButton6->Text = L"radioButton6";
+			this->radioButton6->UseVisualStyleBackColor = true;
+			// 
+			// radioButton7
+			// 
+			this->radioButton7->AutoSize = true;
+			this->radioButton7->Location = System::Drawing::Point(26, 419);
+			this->radioButton7->Name = L"radioButton7";
+			this->radioButton7->Size = System::Drawing::Size(165, 29);
+			this->radioButton7->TabIndex = 5;
+			this->radioButton7->TabStop = true;
+			this->radioButton7->Text = L"radioButton7";
+			this->radioButton7->UseVisualStyleBackColor = true;
+			// 
+			// radioButton8
+			// 
+			this->radioButton8->AutoSize = true;
+			this->radioButton8->Location = System::Drawing::Point(26, 337);
+			this->radioButton8->Name = L"radioButton8";
+			this->radioButton8->Size = System::Drawing::Size(165, 29);
+			this->radioButton8->TabIndex = 1;
+			this->radioButton8->TabStop = true;
+			this->radioButton8->Text = L"radioButton8";
+			this->radioButton8->UseVisualStyleBackColor = true;
+			// 
+			// label9
+			// 
+			this->label9->AutoSize = true;
+			this->label9->Location = System::Drawing::Point(21, 73);
+			this->label9->Name = L"label9";
+			this->label9->Size = System::Drawing::Size(476, 25);
+			this->label9->TabIndex = 4;
+			this->label9->Text = L"Let\'s pick the correct definition from four options.";
+			// 
+			// label10
+			// 
+			this->label10->AutoSize = true;
+			this->label10->Location = System::Drawing::Point(21, 39);
+			this->label10->Name = L"label10";
+			this->label10->Size = System::Drawing::Size(359, 25);
+			this->label10->TabIndex = 3;
+			this->label10->Text = L"So now you\'re given a random word.";
+			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(26, 127);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(181, 51);
+			this->button3->TabIndex = 2;
+			this->button3->Text = L"Start";
+			this->button3->UseVisualStyleBackColor = true;
+			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -428,10 +539,10 @@ namespace DictionaryGUI {
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->tabPage2->ResumeLayout(false);
-			this->groupBox3->ResumeLayout(false);
-			this->groupBox3->PerformLayout();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
+			this->groupBox3->ResumeLayout(false);
+			this->groupBox3->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
