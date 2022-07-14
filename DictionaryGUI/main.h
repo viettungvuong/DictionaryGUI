@@ -338,6 +338,7 @@ namespace DictionaryGUI {
 			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label5->Location = System::Drawing::Point(21, 232);
+			this->label5->MaximumSize = System::Drawing::Size(600, 70);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(102, 29);
 			this->label5->TabIndex = 9;
@@ -460,6 +461,7 @@ namespace DictionaryGUI {
 			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label7->Location = System::Drawing::Point(21, 232);
+			this->label7->MaximumSize = System::Drawing::Size(600, 70);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(102, 29);
 			this->label7->TabIndex = 9;
