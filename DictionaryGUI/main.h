@@ -181,9 +181,9 @@ namespace DictionaryGUI {
 				static_cast<System::Byte>(0)));
 			this->label2->Location = System::Drawing::Point(34, 14);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(247, 34);
+			this->label2->Size = System::Drawing::Size(297, 34);
 			this->label2->TabIndex = 0;
-			this->label2->Text = L"Word of the Day:";
+			this->label2->Text = L"Some random word:";
 			// 
 			// main
 			// 
