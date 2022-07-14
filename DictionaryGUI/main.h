@@ -99,16 +99,16 @@ namespace DictionaryGUI {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->def = (gcnew System::Windows::Forms::Label());
 			this->word = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -140,28 +140,18 @@ namespace DictionaryGUI {
 			this->tabPage1->Text = L"Search";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
-			// tabPage2
-			// 
-			this->tabPage2->Location = System::Drawing::Point(8, 39);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(1435, 787);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Can you guess it!\?";
-			this->tabPage2->UseVisualStyleBackColor = true;
-			// 
 			// listView1
 			// 
 			this->listView1->HideSelection = false;
 			this->listView1->Location = System::Drawing::Point(6, 266);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(341, 521);
+			this->listView1->Size = System::Drawing::Size(341, 631);
 			this->listView1->TabIndex = 8;
 			this->listView1->UseCompatibleStateImageBehavior = false;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(819, 197);
+			this->button1->Location = System::Drawing::Point(1117, 186);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(257, 63);
 			this->button1->TabIndex = 7;
@@ -173,7 +163,7 @@ namespace DictionaryGUI {
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Location = System::Drawing::Point(364, 266);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1054, 542);
+			this->panel1->Size = System::Drawing::Size(1058, 631);
 			this->panel1->TabIndex = 9;
 			// 
 			// label1
@@ -183,9 +173,19 @@ namespace DictionaryGUI {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(0, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(1054, 542);
+			this->label1->Size = System::Drawing::Size(1058, 631);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"test";
+			// 
+			// panel2
+			// 
+			this->panel2->Controls->Add(this->def);
+			this->panel2->Controls->Add(this->word);
+			this->panel2->Controls->Add(this->label2);
+			this->panel2->Location = System::Drawing::Point(6, 6);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(1416, 174);
+			this->panel2->TabIndex = 10;
 			// 
 			// def
 			// 
@@ -220,24 +220,24 @@ namespace DictionaryGUI {
 			this->label2->TabIndex = 0;
 			this->label2->Text = L"Some random word:";
 			// 
-			// panel2
-			// 
-			this->panel2->Controls->Add(this->def);
-			this->panel2->Controls->Add(this->word);
-			this->panel2->Controls->Add(this->label2);
-			this->panel2->Location = System::Drawing::Point(6, 6);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1416, 174);
-			this->panel2->TabIndex = 10;
-			// 
 			// textBox1
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(6, 198);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(776, 49);
+			this->textBox1->Size = System::Drawing::Size(1088, 49);
 			this->textBox1->TabIndex = 6;
+			// 
+			// tabPage2
+			// 
+			this->tabPage2->Location = System::Drawing::Point(8, 39);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(1461, 903);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"Can you guess it!\?";
+			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
 			// main
 			// 
