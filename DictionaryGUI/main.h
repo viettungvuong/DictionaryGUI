@@ -88,6 +88,8 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Label^ label9;
 	private: System::Windows::Forms::Label^ label10;
 	private: System::Windows::Forms::Button^ button3;
+	private: System::Windows::Forms::Button^ button5;
+	private: System::Windows::Forms::Button^ button4;
 
 
 	protected:
@@ -155,6 +157,8 @@ namespace DictionaryGUI {
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
+			this->button4 = (gcnew System::Windows::Forms::Button());
+			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -293,6 +297,7 @@ namespace DictionaryGUI {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->button4);
 			this->groupBox1->Controls->Add(this->label7);
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->radioButton4);
@@ -414,6 +419,7 @@ namespace DictionaryGUI {
 			// 
 			// groupBox3
 			// 
+			this->groupBox3->Controls->Add(this->button5);
 			this->groupBox3->Controls->Add(this->label5);
 			this->groupBox3->Controls->Add(this->label8);
 			this->groupBox3->Controls->Add(this->radioButton5);
@@ -523,6 +529,24 @@ namespace DictionaryGUI {
 			this->button3->Text = L"Start";
 			this->button3->UseVisualStyleBackColor = true;
 			// 
+			// button4
+			// 
+			this->button4->Location = System::Drawing::Point(244, 668);
+			this->button4->Name = L"button4";
+			this->button4->Size = System::Drawing::Size(181, 51);
+			this->button4->TabIndex = 10;
+			this->button4->Text = L"Confirm";
+			this->button4->UseVisualStyleBackColor = true;
+			// 
+			// button5
+			// 
+			this->button5->Location = System::Drawing::Point(248, 668);
+			this->button5->Name = L"button5";
+			this->button5->Size = System::Drawing::Size(181, 51);
+			this->button5->TabIndex = 11;
+			this->button5->Text = L"Confirm";
+			this->button5->UseVisualStyleBackColor = true;
+			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -557,6 +581,14 @@ namespace DictionaryGUI {
 		int currentSet = 2;//mac dinh set se bang 2-dictionary 
 		/*wordOfTheDay();*/
 		wordOfTheDay(listOfTree[2]);
+		radioButton1->Enabled = false;
+		radioButton2->Enabled = false;
+		radioButton3->Enabled = false;
+		radioButton4->Enabled = false;
+		radioButton5->Enabled = false;
+		radioButton6->Enabled = false;
+		radioButton7->Enabled = false;
+		radioButton8->Enabled = false;
 	}
 
 
