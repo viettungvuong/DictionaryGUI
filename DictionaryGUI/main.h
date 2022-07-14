@@ -49,18 +49,33 @@ namespace DictionaryGUI {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TabControl^ tabControl1;
 	protected:
-	private: System::Windows::Forms::Button^ button1;
+	private: System::Windows::Forms::TabPage^ tabPage1;
 	private: System::Windows::Forms::ListView^ listView1;
+	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Panel^ panel2;
-	private: System::Windows::Forms::Label^ label2;
 	public: System::Windows::Forms::Label^ def;
 	private:
-
 	public: System::Windows::Forms::Label^ word;
+	private: System::Windows::Forms::Label^ label2;
+	public:
+	private: System::Windows::Forms::TextBox^ textBox1;
+	private: System::Windows::Forms::TabPage^ tabPage2;
+
+	protected:
+
+
+
+
+
+
+
+	private:
+
+
 	private:
 
 
@@ -82,54 +97,84 @@ namespace DictionaryGUI {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->button1 = (gcnew System::Windows::Forms::Button());
+			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
+			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->listView1 = (gcnew System::Windows::Forms::ListView());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
 			this->def = (gcnew System::Windows::Forms::Label());
 			this->word = (gcnew System::Windows::Forms::Label());
 			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->tabControl1->SuspendLayout();
+			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
-			// textBox1
+			// tabControl1
 			// 
-			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(57, 214);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(750, 49);
-			this->textBox1->TabIndex = 0;
+			this->tabControl1->Controls->Add(this->tabPage1);
+			this->tabControl1->Controls->Add(this->tabPage2);
+			this->tabControl1->Location = System::Drawing::Point(12, 12);
+			this->tabControl1->Name = L"tabControl1";
+			this->tabControl1->SelectedIndex = 0;
+			this->tabControl1->Size = System::Drawing::Size(1477, 950);
+			this->tabControl1->TabIndex = 1;
 			// 
-			// button1
+			// tabPage1
 			// 
-			this->button1->Location = System::Drawing::Point(870, 213);
-			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(231, 63);
-			this->button1->TabIndex = 1;
-			this->button1->Text = L"Search";
-			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &main::button1_Click);
+			this->tabPage1->Controls->Add(this->listView1);
+			this->tabPage1->Controls->Add(this->button1);
+			this->tabPage1->Controls->Add(this->panel1);
+			this->tabPage1->Controls->Add(this->panel2);
+			this->tabPage1->Controls->Add(this->textBox1);
+			this->tabPage1->Location = System::Drawing::Point(8, 39);
+			this->tabPage1->Name = L"tabPage1";
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Size = System::Drawing::Size(1461, 903);
+			this->tabPage1->TabIndex = 0;
+			this->tabPage1->Text = L"Search";
+			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// tabPage2
+			// 
+			this->tabPage2->Location = System::Drawing::Point(8, 39);
+			this->tabPage2->Name = L"tabPage2";
+			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage2->Size = System::Drawing::Size(1435, 787);
+			this->tabPage2->TabIndex = 1;
+			this->tabPage2->Text = L"Can you guess it!\?";
+			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
 			// listView1
 			// 
 			this->listView1->HideSelection = false;
-			this->listView1->Location = System::Drawing::Point(57, 282);
+			this->listView1->Location = System::Drawing::Point(6, 266);
 			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(315, 521);
-			this->listView1->TabIndex = 2;
+			this->listView1->Size = System::Drawing::Size(341, 521);
+			this->listView1->TabIndex = 8;
 			this->listView1->UseCompatibleStateImageBehavior = false;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(819, 197);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(257, 63);
+			this->button1->TabIndex = 7;
+			this->button1->Text = L"Search";
+			this->button1->UseVisualStyleBackColor = true;
 			// 
 			// panel1
 			// 
 			this->panel1->Controls->Add(this->label1);
-			this->panel1->Location = System::Drawing::Point(415, 282);
+			this->panel1->Location = System::Drawing::Point(364, 266);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1028, 542);
-			this->panel1->TabIndex = 4;
+			this->panel1->Size = System::Drawing::Size(1054, 542);
+			this->panel1->TabIndex = 9;
 			// 
 			// label1
 			// 
@@ -138,19 +183,9 @@ namespace DictionaryGUI {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(0, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(1028, 542);
+			this->label1->Size = System::Drawing::Size(1054, 542);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"test";
-			// 
-			// panel2
-			// 
-			this->panel2->Controls->Add(this->def);
-			this->panel2->Controls->Add(this->word);
-			this->panel2->Controls->Add(this->label2);
-			this->panel2->Location = System::Drawing::Point(57, 22);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(1390, 174);
-			this->panel2->TabIndex = 5;
 			// 
 			// def
 			// 
@@ -185,24 +220,41 @@ namespace DictionaryGUI {
 			this->label2->TabIndex = 0;
 			this->label2->Text = L"Some random word:";
 			// 
+			// panel2
+			// 
+			this->panel2->Controls->Add(this->def);
+			this->panel2->Controls->Add(this->word);
+			this->panel2->Controls->Add(this->label2);
+			this->panel2->Location = System::Drawing::Point(6, 6);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(1416, 174);
+			this->panel2->TabIndex = 10;
+			// 
+			// textBox1
+			// 
+			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox1->Location = System::Drawing::Point(6, 198);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(776, 49);
+			this->textBox1->TabIndex = 6;
+			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1475, 858);
-			this->Controls->Add(this->panel2);
-			this->Controls->Add(this->listView1);
-			this->Controls->Add(this->button1);
-			this->Controls->Add(this->textBox1);
-			this->Controls->Add(this->panel1);
+			this->ClientSize = System::Drawing::Size(1471, 974);
+			this->Controls->Add(this->tabControl1);
 			this->Name = L"main";
 			this->Text = L"Dictionary";
 			this->Load += gcnew System::EventHandler(this, &main::main_Load);
+			this->tabControl1->ResumeLayout(false);
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
-			this->PerformLayout();
 
 		}
 #pragma endregion
