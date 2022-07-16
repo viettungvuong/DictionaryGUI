@@ -52,7 +52,7 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	protected:
 	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::ListView^ listView1;
+
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Label^ label1;
@@ -93,6 +93,14 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::TabPage^ tabPage3;
 	private: System::Windows::Forms::TabPage^ tabPage4;
 	private: System::Windows::Forms::TabPage^ tabPage5;
+	private: System::Windows::Forms::TabPage^ tabPage6;
+
+
+	private: System::Windows::Forms::ListBox^ listBox1;
+	private: System::Windows::Forms::Button^ button6;
+	private: System::Windows::Forms::TextBox^ textBox2;
+	private: System::Windows::Forms::Panel^ panel3;
+	private: System::Windows::Forms::Label^ label11;
 
 
 	protected:
@@ -129,7 +137,6 @@ namespace DictionaryGUI {
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->listView1 = (gcnew System::Windows::Forms::ListView());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -165,6 +172,12 @@ namespace DictionaryGUI {
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->button6 = (gcnew System::Windows::Forms::Button());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->panel3 = (gcnew System::Windows::Forms::Panel());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -172,11 +185,14 @@ namespace DictionaryGUI {
 			this->tabPage2->SuspendLayout();
 			this->groupBox3->SuspendLayout();
 			this->groupBox1->SuspendLayout();
+			this->tabPage6->SuspendLayout();
+			this->panel3->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
 			// 
 			this->tabControl1->Controls->Add(this->tabPage1);
+			this->tabControl1->Controls->Add(this->tabPage6);
 			this->tabControl1->Controls->Add(this->tabPage2);
 			this->tabControl1->Controls->Add(this->tabPage3);
 			this->tabControl1->Controls->Add(this->tabPage4);
@@ -189,7 +205,6 @@ namespace DictionaryGUI {
 			// 
 			// tabPage1
 			// 
-			this->tabPage1->Controls->Add(this->listView1);
 			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->panel1);
 			this->tabPage1->Controls->Add(this->panel2);
@@ -199,17 +214,8 @@ namespace DictionaryGUI {
 			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
 			this->tabPage1->Size = System::Drawing::Size(1461, 903);
 			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"Search";
+			this->tabPage1->Text = L"Search by word";
 			this->tabPage1->UseVisualStyleBackColor = true;
-			// 
-			// listView1
-			// 
-			this->listView1->HideSelection = false;
-			this->listView1->Location = System::Drawing::Point(6, 266);
-			this->listView1->Name = L"listView1";
-			this->listView1->Size = System::Drawing::Size(341, 631);
-			this->listView1->TabIndex = 8;
-			this->listView1->UseCompatibleStateImageBehavior = false;
 			// 
 			// button1
 			// 
@@ -224,9 +230,9 @@ namespace DictionaryGUI {
 			// panel1
 			// 
 			this->panel1->Controls->Add(this->label1);
-			this->panel1->Location = System::Drawing::Point(364, 266);
+			this->panel1->Location = System::Drawing::Point(6, 266);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(1058, 631);
+			this->panel1->Size = System::Drawing::Size(1416, 631);
 			this->panel1->TabIndex = 9;
 			// 
 			// label1
@@ -236,7 +242,7 @@ namespace DictionaryGUI {
 				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(0, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(1058, 631);
+			this->label1->Size = System::Drawing::Size(1416, 631);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"test";
 			// 
@@ -585,6 +591,65 @@ namespace DictionaryGUI {
 			this->tabPage5->Text = L"Settings";
 			this->tabPage5->UseVisualStyleBackColor = true;
 			// 
+			// tabPage6
+			// 
+			this->tabPage6->Controls->Add(this->panel3);
+			this->tabPage6->Controls->Add(this->listBox1);
+			this->tabPage6->Controls->Add(this->button6);
+			this->tabPage6->Controls->Add(this->textBox2);
+			this->tabPage6->Location = System::Drawing::Point(8, 39);
+			this->tabPage6->Name = L"tabPage6";
+			this->tabPage6->Size = System::Drawing::Size(1461, 903);
+			this->tabPage6->TabIndex = 5;
+			this->tabPage6->Text = L"Search by definition";
+			this->tabPage6->UseVisualStyleBackColor = true;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->textBox2->Location = System::Drawing::Point(26, 46);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(1088, 49);
+			this->textBox2->TabIndex = 7;
+			// 
+			// button6
+			// 
+			this->button6->Location = System::Drawing::Point(1151, 45);
+			this->button6->Name = L"button6";
+			this->button6->Size = System::Drawing::Size(257, 63);
+			this->button6->TabIndex = 8;
+			this->button6->Text = L"Search";
+			this->button6->UseVisualStyleBackColor = true;
+			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->ItemHeight = 25;
+			this->listBox1->Location = System::Drawing::Point(26, 128);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(397, 754);
+			this->listBox1->TabIndex = 9;
+			// 
+			// panel3
+			// 
+			this->panel3->Controls->Add(this->label11);
+			this->panel3->Location = System::Drawing::Point(453, 128);
+			this->panel3->Name = L"panel3";
+			this->panel3->Size = System::Drawing::Size(977, 754);
+			this->panel3->TabIndex = 10;
+			// 
+			// label11
+			// 
+			this->label11->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label11->Location = System::Drawing::Point(0, 0);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(977, 754);
+			this->label11->TabIndex = 0;
+			this->label11->Text = L"test";
+			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -605,6 +670,9 @@ namespace DictionaryGUI {
 			this->groupBox3->PerformLayout();
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
+			this->tabPage6->ResumeLayout(false);
+			this->tabPage6->PerformLayout();
+			this->panel3->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
