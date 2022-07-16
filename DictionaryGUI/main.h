@@ -621,6 +621,7 @@ namespace DictionaryGUI {
 			this->button6->TabIndex = 8;
 			this->button6->Text = L"Search";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &main::button6_Click);
 			// 
 			// listBox1
 			// 
@@ -696,7 +697,17 @@ namespace DictionaryGUI {
 		radioButton7->Enabled = false;
 		radioButton8->Enabled = false;
 	}
+		   void ll2ListView(LinkedList ll, ListBox^ lb) {
+			   LinkedListNode* current = ll.root;
+			   while (current) {
+				   lb->Items->Add(convertFrom(current->wad.word)); //them vao listBox
+			   }
+		   }
 
 
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
+		LinkedList list = (listOfTree[2].search4Definition(convertTo(textBox2->Text)));
+		ll2ListView(list, listBox1);
+	}
 	};
 }
