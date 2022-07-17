@@ -56,7 +56,7 @@ public:
 	LinkedList search4Definition(std::string definition);
 private:
 	void inorderTraversalAux(TernaryTreeNode* node, std::string currentStr);
-	void inorderTraversalForSearch(TernaryTreeNode* node, std::string currentStr, std::string definition, LinkedList& ll);
+	void inorderTraversalForSearch(TernaryTreeNode* node, std::string currentStr, std::string definition, std::vector<WordAndDef>& v);
 	TernaryTreeNode* root = nullptr;
 	std::pair<std::string, std::string> wordAndDefinition[4]; //de lam guess game
 };

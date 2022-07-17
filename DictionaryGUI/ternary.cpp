@@ -575,10 +575,10 @@ void LinkedList::display(const std::string& definition) {
 		current = current->next;
 	}
 }
-void TernarySearchTree::inorderTraversalForSearch(TernaryTreeNode* node, std::string currentStr, std::string definition, LinkedList& ll) {
+void TernarySearchTree::inorderTraversalForSearch(TernaryTreeNode* node, std::string currentStr, std::string definition, std::vector<WordAndDef>& v) {
 	if (!node)
 		return;
-	inorderTraversalForSearch(node->left, currentStr, definition, ll);
+	inorderTraversalForSearch(node->left, currentStr, definition, v);
 	if (node->definition) {
 		for (int i = 0; i < definition.length(); i++) {
 			definition[i] = tolower(definition[i]);
@@ -589,11 +589,11 @@ void TernarySearchTree::inorderTraversalForSearch(TernaryTreeNode* node, std::st
 			WordAndDef wad;
 			wad.word = currentStr + node->ch;
 			wad.definition = *node->definition;
-			ll.insert(wad);
+			v.push_back(wad);
 		}
 	}
-	inorderTraversalForSearch(node->mid, currentStr + node->ch, definition, ll);
-	inorderTraversalForSearch(node->right, currentStr, definition, ll);
+	inorderTraversalForSearch(node->mid, currentStr + node->ch, definition, v);
+	inorderTraversalForSearch(node->right, currentStr, definition, v);
 }
 LinkedList TernarySearchTree::search4Definition(std::string definition) {
 	LinkedList ans;
