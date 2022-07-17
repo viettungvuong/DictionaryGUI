@@ -100,7 +100,8 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Button^ button6;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Panel^ panel3;
-	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Label^ defOfWord;
+
 
 
 	protected:
@@ -147,7 +148,7 @@ namespace DictionaryGUI {
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
 			this->panel3 = (gcnew System::Windows::Forms::Panel());
-			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->defOfWord = (gcnew System::Windows::Forms::Label());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			this->button6 = (gcnew System::Windows::Forms::Button());
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
@@ -313,22 +314,22 @@ namespace DictionaryGUI {
 			// 
 			// panel3
 			// 
-			this->panel3->Controls->Add(this->label11);
+			this->panel3->Controls->Add(this->defOfWord);
 			this->panel3->Location = System::Drawing::Point(453, 128);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(977, 754);
 			this->panel3->TabIndex = 10;
 			// 
-			// label11
+			// defOfWord
 			// 
-			this->label11->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->defOfWord->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->defOfWord->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label11->Location = System::Drawing::Point(0, 0);
-			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(977, 754);
-			this->label11->TabIndex = 0;
-			this->label11->Text = L"test";
+			this->defOfWord->Location = System::Drawing::Point(0, 0);
+			this->defOfWord->Name = L"defOfWord";
+			this->defOfWord->Size = System::Drawing::Size(977, 754);
+			this->defOfWord->TabIndex = 0;
+			this->defOfWord->Text = L"test";
 			// 
 			// listBox1
 			// 
@@ -707,7 +708,7 @@ namespace DictionaryGUI {
 	}
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (v.size() > 0) {
-			label2->Text = convertFrom(v[listBox1->SelectedIndex].definition);
+			defOfWord->Text = convertFrom(v[listBox1->SelectedIndex].definition); //xuat definition khi dc chon
 		}
 
 	}

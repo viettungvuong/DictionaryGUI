@@ -1,6 +1,6 @@
 #include "functions.h"
 #include <msclr\marshal_cppstd.h>
-using namespace System::ComponentModel::EnumConverter;
+
 
 
 
@@ -125,6 +125,7 @@ System::String^ convertFrom(std::string input) {
 }
 
 void v2ListView(std::vector<WordAndDef> v, System::Windows::Forms::ListBox^ lb) {
+	lb->Items->Clear();
 	for (WordAndDef wad : v) {
 		lb->Items->Add(convertFrom(wad.word));
 	}
