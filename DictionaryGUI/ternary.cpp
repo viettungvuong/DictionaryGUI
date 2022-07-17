@@ -595,8 +595,8 @@ void TernarySearchTree::inorderTraversalForSearch(TernaryTreeNode* node, std::st
 	inorderTraversalForSearch(node->mid, currentStr + node->ch, definition, v);
 	inorderTraversalForSearch(node->right, currentStr, definition, v);
 }
-LinkedList TernarySearchTree::search4Definition(std::string definition) {
-	LinkedList ans;
+std::vector<WordAndDef> TernarySearchTree::search4Definition(std::string definition) {
+	std::vector<WordAndDef> ans;
 	inorderTraversalForSearch(this->root, "", definition, ans);
 	return ans;
 }

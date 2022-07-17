@@ -53,7 +53,7 @@ public:
 	void deleteKeword(std::string keyword);
 	TernaryTreeNode* getRoot();
 	void inorderTraversal();
-	LinkedList search4Definition(std::string definition);
+	std::vector<WordAndDef> search4Definition(std::string definition);
 private:
 	void inorderTraversalAux(TernaryTreeNode* node, std::string currentStr);
 	void inorderTraversalForSearch(TernaryTreeNode* node, std::string currentStr, std::string definition, std::vector<WordAndDef>& v);

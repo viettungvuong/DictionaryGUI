@@ -13,3 +13,4 @@ void resetAllDictionary(TernarySearchTree* listOfTree);
 void changeSet(int& currentSet);
 std::string convertTo(System::String^ input);
 System::String^ convertFrom(std::string input);
+void v2ListView(std::vector<WordAndDef> v, System::Windows::Forms::ListBox^ lb);
