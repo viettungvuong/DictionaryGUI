@@ -493,6 +493,7 @@ namespace DictionaryGUI {
 			this->button3->TabIndex = 2;
 			this->button3->Text = L"Start";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &main::button3_Click);
 			// 
 			// groupBox1
 			// 
@@ -616,6 +617,7 @@ namespace DictionaryGUI {
 			this->button2->TabIndex = 2;
 			this->button2->Text = L"Start";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &main::button2_Click);
 			// 
 			// groupBox2
 			// 
@@ -712,5 +714,17 @@ namespace DictionaryGUI {
 		}
 
 	}
-	};
+	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		radioButton1->Enabled = true;
+		radioButton2->Enabled = true;
+		radioButton3->Enabled = true;
+		radioButton4->Enabled = true;
+	}
+    private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	    radioButton5->Enabled = true;
+	    radioButton6->Enabled = true;
+	    radioButton7->Enabled = true;
+	    radioButton8->Enabled = true;
+    }    
+};
 }
