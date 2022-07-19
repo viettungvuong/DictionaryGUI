@@ -720,11 +720,74 @@ namespace DictionaryGUI {
 		radioButton3->Enabled = true;
 		radioButton4->Enabled = true;
 	}
-    private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	    radioButton5->Enabled = true;
-	    radioButton6->Enabled = true;
-	    radioButton7->Enabled = true;
-	    radioButton8->Enabled = true;
-    }    
-};
+
+
+		   void guessRandomWord(TernarySearchTree tree, bool nonWord) {
+			   for (int i = 0; i < 4; i++) {
+				   if (nonWord)
+					   tree.getRandomWord2(false, i);
+				   else
+					   tree.getRandomWord(false, i);
+			   }
+			   int chooseWord = rand() % 4;
+			   std::string show = tree.wordAndDefinition[chooseWord].second;
+			   for (int i = 0; i < 4; i++) {
+				   RadioButton^ selected;
+				   switch (i) {
+				   case 1: {
+					   selected = radioButton1;
+					   break; }
+				   case 2: {
+					   selected = radioButton2;
+					   break; }
+				   case 3: {
+					   selected = radioButton3;
+					   break;
+				   }
+				   default: {
+					   selected = radioButton4;
+					   break;
+				   }
+				   }
+				   selected->Text = convertFrom(tree.wordAndDefinition[i].first);
+			   }
+			   std::cout << "Please choose your answer: ";
+			   int in;
+			   std::cin >> in;
+			   if ((in - 1) == chooseWord) {
+				   std::cout << "Congratulations, you got the correct answer!";
+			   }
+			   else {
+				   std::cout << "WASTED, the correct answer is " << wordAndDefinition[chooseWord].first;
+			   }
+		   }
+		   void guessRandomDefinition(bool nonWord) {
+			   for (int i = 0; i < 4; i++) {
+				   if (nonWord)
+					   getRandomWord2(false, i);
+				   else
+					   getRandomWord(false, i);
+			   }
+			   int chooseWord = rand() % 4;
+			   std::cout << "The word is: \n" << wordAndDefinition[chooseWord].first << "\nPlease choose the correct definition: \n";
+			   for (int i = 0; i < 4; i++) {
+				   std::cout << i + 1 << ". " << wordAndDefinition[i].second << "\n";
+			   }
+			   std::cout << "Please choose your answer: ";
+			   int in;
+			   std::cin >> in;
+			   if ((in - 1) == chooseWord) {
+				   std::cout << "Congratulations, you got the correct answer!";
+			   }
+			   else {
+				   std::cout << "WASTED, the correct answer is " << wordAndDefinition[chooseWord].second;
+			   }
+		   }
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		radioButton5->Enabled = true;
+		radioButton6->Enabled = true;
+		radioButton7->Enabled = true;
+		radioButton8->Enabled = true;
+	}
+	};
 }
