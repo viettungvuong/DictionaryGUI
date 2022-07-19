@@ -77,9 +77,11 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::RadioButton^ radioButton3;
 	private: System::Windows::Forms::RadioButton^ radioButton2;
 	private: System::Windows::Forms::RadioButton^ radioButton1;
-	private: System::Windows::Forms::Label^ label7;
+	private: System::Windows::Forms::Label^ guessDef;
+
 	private: System::Windows::Forms::GroupBox^ groupBox3;
-	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::Label^ guessWord;
+
 	private: System::Windows::Forms::Label^ label8;
 	private: System::Windows::Forms::RadioButton^ radioButton5;
 	private: System::Windows::Forms::RadioButton^ radioButton6;
@@ -155,7 +157,7 @@ namespace DictionaryGUI {
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
 			this->button5 = (gcnew System::Windows::Forms::Button());
-			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->guessWord = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
 			this->radioButton5 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton6 = (gcnew System::Windows::Forms::RadioButton());
@@ -166,7 +168,7 @@ namespace DictionaryGUI {
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->button4 = (gcnew System::Windows::Forms::Button());
-			this->label7 = (gcnew System::Windows::Forms::Label());
+			this->guessDef = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
 			this->radioButton4 = (gcnew System::Windows::Forms::RadioButton());
 			this->radioButton3 = (gcnew System::Windows::Forms::RadioButton());
@@ -375,7 +377,7 @@ namespace DictionaryGUI {
 			// groupBox3
 			// 
 			this->groupBox3->Controls->Add(this->button5);
-			this->groupBox3->Controls->Add(this->label5);
+			this->groupBox3->Controls->Add(this->guessWord);
 			this->groupBox3->Controls->Add(this->label8);
 			this->groupBox3->Controls->Add(this->radioButton5);
 			this->groupBox3->Controls->Add(this->radioButton6);
@@ -400,17 +402,17 @@ namespace DictionaryGUI {
 			this->button5->Text = L"Confirm";
 			this->button5->UseVisualStyleBackColor = true;
 			// 
-			// label5
+			// guessWord
 			// 
-			this->label5->AutoSize = true;
-			this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->guessWord->AutoSize = true;
+			this->guessWord->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label5->Location = System::Drawing::Point(21, 232);
-			this->label5->MaximumSize = System::Drawing::Size(600, 70);
-			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(102, 29);
-			this->label5->TabIndex = 9;
-			this->label5->Text = L"def here";
+			this->guessWord->Location = System::Drawing::Point(21, 232);
+			this->guessWord->MaximumSize = System::Drawing::Size(600, 70);
+			this->guessWord->Name = L"guessWord";
+			this->guessWord->Size = System::Drawing::Size(102, 29);
+			this->guessWord->TabIndex = 9;
+			this->guessWord->Text = L"def here";
 			// 
 			// label8
 			// 
@@ -498,7 +500,7 @@ namespace DictionaryGUI {
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->button4);
-			this->groupBox1->Controls->Add(this->label7);
+			this->groupBox1->Controls->Add(this->guessDef);
 			this->groupBox1->Controls->Add(this->label6);
 			this->groupBox1->Controls->Add(this->radioButton4);
 			this->groupBox1->Controls->Add(this->radioButton3);
@@ -523,18 +525,19 @@ namespace DictionaryGUI {
 			this->button4->TabIndex = 10;
 			this->button4->Text = L"Confirm";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &main::button4_Click);
 			// 
-			// label7
+			// guessDef
 			// 
-			this->label7->AutoSize = true;
-			this->label7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->guessDef->AutoSize = true;
+			this->guessDef->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label7->Location = System::Drawing::Point(21, 232);
-			this->label7->MaximumSize = System::Drawing::Size(600, 70);
-			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(102, 29);
-			this->label7->TabIndex = 9;
-			this->label7->Text = L"def here";
+			this->guessDef->Location = System::Drawing::Point(21, 232);
+			this->guessDef->MaximumSize = System::Drawing::Size(600, 70);
+			this->guessDef->Name = L"guessDef";
+			this->guessDef->Size = System::Drawing::Size(102, 29);
+			this->guessDef->TabIndex = 9;
+			this->guessDef->Text = L"def here";
 			// 
 			// label6
 			// 
@@ -719,6 +722,7 @@ namespace DictionaryGUI {
 		radioButton2->Enabled = true;
 		radioButton3->Enabled = true;
 		radioButton4->Enabled = true;
+		guessRandomWord(listOfTree[2], false);
 	}
 
 
@@ -731,6 +735,7 @@ namespace DictionaryGUI {
 			   }
 			   int chooseWord = rand() % 4;
 			   std::string show = tree.wordAndDefinition[chooseWord].second;
+			   guessWord->Text = convertFrom(show);
 			   for (int i = 0; i < 4; i++) {
 				   RadioButton^ selected;
 				   switch (i) {
@@ -763,21 +768,22 @@ namespace DictionaryGUI {
 			   }
 			   int chooseWord = rand() % 4;
 			   std::string show = tree.wordAndDefinition[chooseWord].first;
+			   guessDef->Text = convertFrom(show);
 			   for (int i = 0; i < 4; i++) {
 				   RadioButton^ selected;
 				   switch (i) {
 				   case 1: {
-					   selected = radioButton1;
+					   selected = radioButton5;
 					   break; }
 				   case 2: {
-					   selected = radioButton2;
+					   selected = radioButton6;
 					   break; }
 				   case 3: {
-					   selected = radioButton3;
+					   selected = radioButton7;
 					   break;
 				   }
 				   default: {
-					   selected = radioButton4;
+					   selected = radioButton8;
 					   break;
 				   }
 				   }
@@ -791,6 +797,9 @@ namespace DictionaryGUI {
 		radioButton6->Enabled = true;
 		radioButton7->Enabled = true;
 		radioButton8->Enabled = true;
+		guessRandomDefinition(listOfTree[2], false);
 	}
-	};
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }
