@@ -735,7 +735,7 @@ namespace DictionaryGUI {
 			   }
 			   int chooseWord = rand() % 4;
 			   std::string show = tree.wordAndDefinition[chooseWord].second;
-			   guessWord->Text = convertFrom(show);
+			   guessDef->Text = convertFrom(show);
 			   for (int i = 0; i < 4; i++) {
 				   RadioButton^ selected;
 				   switch (i) {
@@ -768,7 +768,7 @@ namespace DictionaryGUI {
 			   }
 			   int chooseWord = rand() % 4;
 			   std::string show = tree.wordAndDefinition[chooseWord].first;
-			   guessDef->Text = convertFrom(show);
+			   guessWord->Text = convertFrom(show);
 			   for (int i = 0; i < 4; i++) {
 				   RadioButton^ selected;
 				   switch (i) {
