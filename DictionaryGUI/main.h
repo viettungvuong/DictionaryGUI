@@ -103,6 +103,8 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Label^ defOfWord;
+	private: System::Windows::Forms::Button^ button8;
+	private: System::Windows::Forms::Button^ button7;
 
 
 
@@ -181,6 +183,8 @@ namespace DictionaryGUI {
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
+			this->button7 = (gcnew System::Windows::Forms::Button());
+			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -208,6 +212,8 @@ namespace DictionaryGUI {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->button8);
+			this->tabPage1->Controls->Add(this->button7);
 			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->panel1);
 			this->tabPage1->Controls->Add(this->panel2);
@@ -222,7 +228,7 @@ namespace DictionaryGUI {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(1117, 186);
+			this->button1->Location = System::Drawing::Point(935, 197);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(257, 63);
 			this->button1->TabIndex = 7;
@@ -298,7 +304,7 @@ namespace DictionaryGUI {
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(6, 198);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(1088, 49);
+			this->textBox1->Size = System::Drawing::Size(898, 49);
 			this->textBox1->TabIndex = 6;
 			// 
 			// tabPage6
@@ -657,6 +663,24 @@ namespace DictionaryGUI {
 			this->tabPage5->TabIndex = 4;
 			this->tabPage5->Text = L"Settings";
 			this->tabPage5->UseVisualStyleBackColor = true;
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(1207, 197);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(117, 63);
+			this->button7->TabIndex = 11;
+			this->button7->Text = L"+";
+			this->button7->UseVisualStyleBackColor = true;
+			// 
+			// button8
+			// 
+			this->button8->Location = System::Drawing::Point(1338, 197);
+			this->button8->Name = L"button8";
+			this->button8->Size = System::Drawing::Size(117, 63);
+			this->button8->TabIndex = 12;
+			this->button8->Text = L"Edit word";
+			this->button8->UseVisualStyleBackColor = true;
 			// 
 			// main
 			// 
