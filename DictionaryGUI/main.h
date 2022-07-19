@@ -751,37 +751,40 @@ namespace DictionaryGUI {
 				   }
 				   selected->Text = convertFrom(tree.wordAndDefinition[i].first);
 			   }
-			   std::cout << "Please choose your answer: ";
-			   int in;
-			   std::cin >> in;
-			   if ((in - 1) == chooseWord) {
-				   std::cout << "Congratulations, you got the correct answer!";
-			   }
-			   else {
-				   std::cout << "WASTED, the correct answer is " << wordAndDefinition[chooseWord].first;
-			   }
+			   //tu dung la wordAndDefinition[chooseWord].first
+			  
 		   }
-		   void guessRandomDefinition(bool nonWord) {
+		   void guessRandomDefinition(TernarySearchTree tree, bool nonWord) {
 			   for (int i = 0; i < 4; i++) {
 				   if (nonWord)
-					   getRandomWord2(false, i);
+					   tree.getRandomWord2(false, i);
 				   else
-					   getRandomWord(false, i);
+					   tree.getRandomWord(false, i);
 			   }
 			   int chooseWord = rand() % 4;
-			   std::cout << "The word is: \n" << wordAndDefinition[chooseWord].first << "\nPlease choose the correct definition: \n";
+			   std::string show = tree.wordAndDefinition[chooseWord].first;
 			   for (int i = 0; i < 4; i++) {
-				   std::cout << i + 1 << ". " << wordAndDefinition[i].second << "\n";
+				   RadioButton^ selected;
+				   switch (i) {
+				   case 1: {
+					   selected = radioButton1;
+					   break; }
+				   case 2: {
+					   selected = radioButton2;
+					   break; }
+				   case 3: {
+					   selected = radioButton3;
+					   break;
+				   }
+				   default: {
+					   selected = radioButton4;
+					   break;
+				   }
+				   }
+				   selected->Text = convertFrom(tree.wordAndDefinition[i].second);
 			   }
-			   std::cout << "Please choose your answer: ";
-			   int in;
-			   std::cin >> in;
-			   if ((in - 1) == chooseWord) {
-				   std::cout << "Congratulations, you got the correct answer!";
-			   }
-			   else {
-				   std::cout << "WASTED, the correct answer is " << wordAndDefinition[chooseWord].second;
-			   }
+			   //tu dung la wordAndDefinition[chooseWord].second
+		
 		   }
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 		radioButton5->Enabled = true;
