@@ -132,6 +132,7 @@ namespace DictionaryGUI {
 			this->MinimizeBox = false;
 			this->Name = L"edit";
 			this->Text = L"edit";
+			this->Load += gcnew System::EventHandler(this, &edit::edit_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -150,6 +151,9 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 		button1->Enabled = true;
 	else
 		button1->Enabled = false;
+}
+private: System::Void edit_Load(System::Object^ sender, System::EventArgs^ e) {
+	label2->Text = changingWord;
 }
 };
 }

@@ -935,8 +935,8 @@ namespace DictionaryGUI {
 		button8->Enabled = true;
 	}
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
-		button8->Enabled = true;
-		button7->Enabled = true;
+		button8->Enabled = false;
+		button7->Enabled = false;
 		srand(time(NULL)); //khoi tao random//Tung dang test cai nay
 		createSet(ProgramData::listOfTree);//khoi tao
 		int currentSet = 2;//mac dinh set se bang 2-dictionary 
@@ -1056,10 +1056,14 @@ namespace DictionaryGUI {
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
-	Application::Run(gcnew edit(textBox1->Text));
+	Form^ rgForm = gcnew edit(textBox1->Text);
+	rgForm->Show();
+	this->Hide();
 }
 private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	Application::Run(gcnew edit(listBox1->SelectedItem->ToString()));
+	Form^ rgForm = gcnew edit(listBox1->SelectedItem->ToString());
+	rgForm->Show();
+	this->Hide();
 }
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (this->Text->Length != 0)
