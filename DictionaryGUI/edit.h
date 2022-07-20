@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include "functions.h"
-#include "main.h"
+
 
 namespace DictionaryGUI {
 
@@ -143,7 +143,7 @@ namespace DictionaryGUI {
 		}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::string changing = convertTo(changingWord); //lay tu dang chon
-		changeWord(currentTree, changing);
+		changeWord(ProgramData::currentTree, changing);
 	}
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (this->Text->Length != 0)

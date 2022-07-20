@@ -3,9 +3,16 @@
 #include "ternary.h"
 #include <string.h>
 
+
+class ProgramData {
+public :static TernarySearchTree currentTree;
+
+	   static TernarySearchTree listOfTree[3];
+};
+
 void deletetree(TernaryTreeNode* root);
 
-void createSet(TernarySearchTree* listOfTree);
+void createSet(TernarySearchTree* istOfTree);
 int childOfNode(TernaryTreeNode* node);
 void saveTree(TernaryTreeNode* root, int index);
 void saveAllTree(TernarySearchTree* listOfTree);

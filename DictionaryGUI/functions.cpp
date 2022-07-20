@@ -1,6 +1,7 @@
 #include "functions.h"
 #include <msclr\marshal_cppstd.h>
-
+TernarySearchTree ProgramData::listOfTree[3];
+TernarySearchTree ProgramData::currentTree = ProgramData::listOfTree[2]; //mac dinh
 
 
 
@@ -19,7 +20,7 @@ void createSet(TernarySearchTree* listOfTree)
 {
 	for (int i = 0; i < NUMofSET; ++i)
 	{
-		listOfTree[i].import_dictionary(i);
+		ProgramData::listOfTree[i].import_dictionary(i);
 	}
 }
 
@@ -87,7 +88,7 @@ void saveAllTree(TernarySearchTree* listOfTree)
 	fC.close();
 	for (int i = 0; i < NUMofSET; ++i)
 	{
-		saveTree(listOfTree[i].getRoot(), i);
+		saveTree(ProgramData::listOfTree[i].getRoot(), i);
 	}
 }
 
@@ -95,10 +96,10 @@ void resetAllDictionary(TernarySearchTree* listOfTree)
 {
 	for (int i = 0; i < NUMofSET; ++i)
 	{
-		listOfTree[i].deleteTree();
-		listOfTree[i].import_dictionary(i, 1);
+		ProgramData::listOfTree[i].deleteTree();
+		ProgramData::listOfTree[i].import_dictionary(i, 1);
 	}
-	saveAllTree(listOfTree);
+	saveAllTree(ProgramData::listOfTree);
 }
 
 void changeSet(int& currentSet)

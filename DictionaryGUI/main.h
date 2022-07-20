@@ -4,12 +4,10 @@
 #include "Screen.h"
 #include "functions.h"
 #include <string>
-
+#include "edit.h"
 #include <msclr\marshal_cppstd.h>
 
-TernarySearchTree listOfTree[3];
 
-TernarySearchTree currentTree = listOfTree[2];
 namespace DictionaryGUI {
 
 	using namespace System;
@@ -34,7 +32,7 @@ namespace DictionaryGUI {
 		{
 			InitializeComponent();
 			srand(time(NULL)); //khoi tao random//Tung dang test cai nay
-			createSet(listOfTree);//khoi tao
+			createSet(ProgramData::listOfTree);//khoi tao
 			int currentSet = 2;//mac dinh set se bang 2-dictionary k
 			//
 			//TODO: Add the constructor code here
@@ -927,7 +925,7 @@ namespace DictionaryGUI {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		TernaryTreeNode* find = currentTree.search4keyword(convertTo(textBox1->Text));
+		TernaryTreeNode* find = ProgramData::currentTree.search4keyword(convertTo(textBox1->Text));
 		if (!find || !find->definition) {
 			label1->Text = "Not found";
 			return;
@@ -940,10 +938,10 @@ namespace DictionaryGUI {
 		button8->Enabled = true;
 		button7->Enabled = true;
 		srand(time(NULL)); //khoi tao random//Tung dang test cai nay
-		createSet(listOfTree);//khoi tao
+		createSet(ProgramData::listOfTree);//khoi tao
 		int currentSet = 2;//mac dinh set se bang 2-dictionary 
 		/*wordOfTheDay();*/
-		wordOfTheDay(listOfTree[2]);
+		wordOfTheDay(ProgramData::listOfTree[2]);
 		radioButton1->Enabled = false;
 		radioButton2->Enabled = false;
 		radioButton3->Enabled = false;
@@ -958,7 +956,7 @@ namespace DictionaryGUI {
 
 
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-		v = (listOfTree[2].search4Definition(convertTo(textBox2->Text)));
+		v = (ProgramData::listOfTree[2].search4Definition(convertTo(textBox2->Text)));
 		v2ListView(v, listBox1);
 	}
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -976,7 +974,7 @@ namespace DictionaryGUI {
 		radioButton2->Enabled = true;
 		radioButton3->Enabled = true;
 		radioButton4->Enabled = true;
-		guessRandomWord(listOfTree[2], false);
+		guessRandomWord(ProgramData::currentTree, false);
 	}
 
 
@@ -1051,7 +1049,7 @@ namespace DictionaryGUI {
 		radioButton6->Enabled = true;
 		radioButton7->Enabled = true;
 		radioButton8->Enabled = true;
-		guessRandomDefinition(currentTree, false);
+		guessRandomDefinition(ProgramData::currentTree, false);
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
