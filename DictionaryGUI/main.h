@@ -439,6 +439,7 @@ namespace DictionaryGUI {
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(469, 28);
 			this->textBox2->TabIndex = 7;
+			this->textBox2->TextChanged += gcnew System::EventHandler(this, &main::textBox2_TextChanged);
 			// 
 			// tabPage2
 			// 
@@ -1053,6 +1054,12 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	Application::Run(gcnew edit(listBox1->SelectedItem->ToString()));
+}
+private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (this->Text->Length != 0)
+		button6->Enabled = true;
+	else
+		button6->Enabled = false;
 }
 };
 }

@@ -108,6 +108,7 @@ namespace DictionaryGUI {
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(336, 134);
 			this->textBox1->TabIndex = 3;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &edit::textBox1_TextChanged);
 			// 
 			// button1
 			// 
@@ -146,5 +147,11 @@ namespace DictionaryGUI {
 		std::string changing = convertTo(changingWord); //lay tu dang chon
 		changeWord(currentTree, changing);
 	}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (this->Text->Length != 0)
+		button1->Enabled = true;
+	else
+		button1->Enabled = false;
+}
 };
 }
