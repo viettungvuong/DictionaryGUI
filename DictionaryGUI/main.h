@@ -6,6 +6,7 @@
 #include <string>
 
 #include <msclr\marshal_cppstd.h>
+TernarySearchTree currentTree;
 TernarySearchTree listOfTree[3];
 namespace DictionaryGUI {
 

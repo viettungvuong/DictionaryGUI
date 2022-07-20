@@ -227,6 +227,9 @@ void TernarySearchTree::addNewWordToDict() {
 	std::getline(std::cin, definition);
 	this->add2Tree(keyword, definition, 0);
 }
+void updateWord(TernaryTreeNode*& tem,std::string newDefinition) {
+	*tem->definition = newDefinition;
+}
 void TernarySearchTree::add2Tree(std::string keyword, std::string definition, bool importing)
 {
 	if (!this->root)
@@ -248,7 +251,7 @@ void TernarySearchTree::add2Tree(std::string keyword, std::string definition, bo
 				if (toupper(in) == 'Y') {
 					std::string newDefinition;
 					std::getline(std::cin, newDefinition);
-					*tem->definition = definition;
+					updateWord(tem, newDefinition);
 					std::cout << "Update new definition successfully for " << keyword << " \n";
 				}
 				return;

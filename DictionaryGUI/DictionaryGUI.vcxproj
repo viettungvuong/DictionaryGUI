@@ -146,6 +146,9 @@
     <ClInclude Include="ternary.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="edit.resx">
+      <DependentUpon>edit.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="main.resx">
       <DependentUpon>main.h</DependentUpon>
     </EmbeddedResource>

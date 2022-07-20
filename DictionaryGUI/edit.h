@@ -1,4 +1,7 @@
 #pragma once
+#include <string>
+#include "functions.h"
+#include "main.h"
 
 namespace DictionaryGUI {
 
@@ -9,18 +12,26 @@ namespace DictionaryGUI {
 	using namespace System::Data;
 	using namespace System::Drawing;
 
+	
+
 	/// <summary>
 	/// Summary for edit
 	/// </summary>
 	public ref class edit : public System::Windows::Forms::Form
 	{
+	private: System::String^ changingWord;
 	public:
-		edit(void)
+		edit(System::String^ changingWord)
 		{
 			InitializeComponent();
+			this->changingWord = changingWord;
 			//
 			//TODO: Add the constructor code here
 			//
+		}
+
+		edit(void) {
+			InitializeComponent();
 		}
 
 	protected:
@@ -106,6 +117,7 @@ namespace DictionaryGUI {
 			this->button1->TabIndex = 4;
 			this->button1->Text = L"Confirm";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &edit::button1_Click);
 			// 
 			// edit
 			// 
@@ -126,5 +138,13 @@ namespace DictionaryGUI {
 
 		}
 #pragma endregion
-	};
+		void changeWord(TernarySearchTree tree, std::string changingWord) {
+			TernaryTreeNode* find = tree.search4keyword(changingWord);
+			updateWord(find, convertTo(textBox1->Text));
+		}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		std::string changing = convertTo(changingWord); //lay tu dang chon
+		changeWord(currentTree, changing);
+	}
+};
 }
