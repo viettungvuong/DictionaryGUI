@@ -112,6 +112,15 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Button^ button9;
 	private: System::Windows::Forms::TextBox^ textBox3;
 	private: System::Windows::Forms::Label^ label5;
+	private: System::Windows::Forms::GroupBox^ groupBox5;
+	private: System::Windows::Forms::Button^ switchData;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+
+
+
+
+
+
 
 
 
@@ -199,6 +208,9 @@ namespace DictionaryGUI {
 			this->label7 = (gcnew System::Windows::Forms::Label());
 			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->button10 = (gcnew System::Windows::Forms::Button());
+			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->switchData = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -210,6 +222,7 @@ namespace DictionaryGUI {
 			this->groupBox1->SuspendLayout();
 			this->tabPage5->SuspendLayout();
 			this->groupBox4->SuspendLayout();
+			this->groupBox5->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -739,6 +752,7 @@ namespace DictionaryGUI {
 			// 
 			// tabPage5
 			// 
+			this->tabPage5->Controls->Add(this->groupBox5);
 			this->tabPage5->Controls->Add(this->groupBox4);
 			this->tabPage5->Location = System::Drawing::Point(8, 39);
 			this->tabPage5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
@@ -815,6 +829,37 @@ namespace DictionaryGUI {
 			this->button10->Text = L"Add";
 			this->button10->UseVisualStyleBackColor = true;
 			// 
+			// groupBox5
+			// 
+			this->groupBox5->Controls->Add(this->switchData);
+			this->groupBox5->Controls->Add(this->comboBox1);
+			this->groupBox5->Location = System::Drawing::Point(25, 478);
+			this->groupBox5->Name = L"groupBox5";
+			this->groupBox5->Size = System::Drawing::Size(1414, 422);
+			this->groupBox5->TabIndex = 6;
+			this->groupBox5->TabStop = false;
+			this->groupBox5->Text = L"Switch dataset:";
+			// 
+			// comboBox1
+			// 
+			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"English words", L"Slangs", L"Emojis" });
+			this->comboBox1->Location = System::Drawing::Point(37, 47);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(1017, 39);
+			this->comboBox1->TabIndex = 0;
+			// 
+			// switchData
+			// 
+			this->switchData->Location = System::Drawing::Point(1152, 118);
+			this->switchData->Name = L"switchData";
+			this->switchData->Size = System::Drawing::Size(231, 53);
+			this->switchData->TabIndex = 6;
+			this->switchData->Text = L"Switch";
+			this->switchData->UseVisualStyleBackColor = true;
+			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
@@ -842,6 +887,7 @@ namespace DictionaryGUI {
 			this->tabPage5->ResumeLayout(false);
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
+			this->groupBox5->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
