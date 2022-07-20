@@ -104,7 +104,7 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Panel^ panel3;
 	private: System::Windows::Forms::Label^ defOfWord;
 	private: System::Windows::Forms::Button^ button8;
-	private: System::Windows::Forms::Button^ button7;
+
 	private: System::Windows::Forms::GroupBox^ groupBox4;
 	private: System::Windows::Forms::Button^ button10;
 	private: System::Windows::Forms::TextBox^ textBox4;
@@ -116,6 +116,7 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Button^ switchData;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ label11;
+	private: System::Windows::Forms::Button^ button7;
 
 
 
@@ -160,7 +161,6 @@ namespace DictionaryGUI {
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
 			this->button8 = (gcnew System::Windows::Forms::Button());
-			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->label1 = (gcnew System::Windows::Forms::Label());
@@ -213,6 +213,7 @@ namespace DictionaryGUI {
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->switchData = (gcnew System::Windows::Forms::Button());
 			this->label11 = (gcnew System::Windows::Forms::Label());
+			this->button7 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -245,7 +246,6 @@ namespace DictionaryGUI {
 			// tabPage1
 			// 
 			this->tabPage1->Controls->Add(this->button8);
-			this->tabPage1->Controls->Add(this->button7);
 			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->panel1);
 			this->tabPage1->Controls->Add(this->panel2);
@@ -261,24 +261,13 @@ namespace DictionaryGUI {
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(1338, 196);
+			this->button8->Location = System::Drawing::Point(1200, 196);
 			this->button8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button8->Name = L"button8";
-			this->button8->Size = System::Drawing::Size(116, 63);
+			this->button8->Size = System::Drawing::Size(254, 63);
 			this->button8->TabIndex = 12;
-			this->button8->Text = L"Edit word";
+			this->button8->Text = L"Edit current word";
 			this->button8->UseVisualStyleBackColor = true;
-			// 
-			// button7
-			// 
-			this->button7->Location = System::Drawing::Point(1208, 196);
-			this->button7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
-			this->button7->Name = L"button7";
-			this->button7->Size = System::Drawing::Size(116, 63);
-			this->button7->TabIndex = 11;
-			this->button7->Text = L"+";
-			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &main::button7_Click);
 			// 
 			// button1
 			// 
@@ -371,6 +360,7 @@ namespace DictionaryGUI {
 			// 
 			// tabPage6
 			// 
+			this->tabPage6->Controls->Add(this->button7);
 			this->tabPage6->Controls->Add(this->panel3);
 			this->tabPage6->Controls->Add(this->listBox1);
 			this->tabPage6->Controls->Add(this->button6);
@@ -417,10 +407,10 @@ namespace DictionaryGUI {
 			// 
 			// button6
 			// 
-			this->button6->Location = System::Drawing::Point(1152, 44);
+			this->button6->Location = System::Drawing::Point(992, 45);
 			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button6->Name = L"button6";
-			this->button6->Size = System::Drawing::Size(256, 63);
+			this->button6->Size = System::Drawing::Size(168, 63);
 			this->button6->TabIndex = 8;
 			this->button6->Text = L"Search";
 			this->button6->UseVisualStyleBackColor = true;
@@ -433,7 +423,7 @@ namespace DictionaryGUI {
 			this->textBox2->Location = System::Drawing::Point(26, 46);
 			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(1088, 49);
+			this->textBox2->Size = System::Drawing::Size(934, 49);
 			this->textBox2->TabIndex = 7;
 			// 
 			// tabPage2
@@ -874,6 +864,16 @@ namespace DictionaryGUI {
 			this->label11->Size = System::Drawing::Size(530, 51);
 			this->label11->TabIndex = 6;
 			this->label11->Text = L"PROJECT CS163 - KPLT";
+			// 
+			// button7
+			// 
+			this->button7->Location = System::Drawing::Point(1174, 45);
+			this->button7->Margin = System::Windows::Forms::Padding(4);
+			this->button7->Name = L"button7";
+			this->button7->Size = System::Drawing::Size(254, 63);
+			this->button7->TabIndex = 13;
+			this->button7->Text = L"Edit current word";
+			this->button7->UseVisualStyleBackColor = true;
 			// 
 			// main
 			// 
