@@ -1058,12 +1058,12 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {
 	Form^ rgForm = gcnew edit(textBox1->Text);
 	rgForm->Show();
-	this->Hide();
+
 }
 private: System::Void button7_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	Form^ rgForm = gcnew edit(listBox1->SelectedItem->ToString());
 	rgForm->Show();
-	this->Hide();
+
 }
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (this->Text->Length != 0)
