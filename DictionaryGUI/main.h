@@ -927,10 +927,18 @@ namespace DictionaryGUI {
 		}
 #pragma endregion
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
-		std::string def = *(listOfTree[2].search4keyword(convertTo(textBox1->Text)))->definition;
+		TernaryTreeNode* find = currentTree.search4keyword(convertTo(textBox1->Text));
+		if (!find || !find->definition) {
+			label1->Text = "Not found";
+			return;
+		}
+		std::string def = *find->definition;
 		label1->Text = convertFrom(def);
+		button8->Enabled = true;
 	}
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
+		button8->Enabled = true;
+		button7->Enabled = true;
 		srand(time(NULL)); //khoi tao random//Tung dang test cai nay
 		createSet(listOfTree);//khoi tao
 		int currentSet = 2;//mac dinh set se bang 2-dictionary 
