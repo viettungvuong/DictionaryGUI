@@ -1051,7 +1051,7 @@ namespace DictionaryGUI {
 		radioButton6->Enabled = true;
 		radioButton7->Enabled = true;
 		radioButton8->Enabled = true;
-		guessRandomDefinition(listOfTree[2], false);
+		guessRandomDefinition(currentTree, false);
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

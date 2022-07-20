@@ -30,9 +30,7 @@ namespace DictionaryGUI {
 			//
 		}
 
-		edit(void) {
-			InitializeComponent();
-		}
+
 
 	protected:
 		/// <summary>
