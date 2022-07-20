@@ -118,6 +118,8 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::ComboBox^ comboBox1;
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Button^ button7;
+	private: System::Windows::Forms::Button^ button11;
+	private: System::Windows::Forms::Button^ button11;
 
 
 
@@ -215,6 +217,7 @@ namespace DictionaryGUI {
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -755,6 +758,7 @@ namespace DictionaryGUI {
 			// 
 			// tabPage5
 			// 
+			this->tabPage5->Controls->Add(this->button11);
 			this->tabPage5->Controls->Add(this->label11);
 			this->tabPage5->Controls->Add(this->groupBox5);
 			this->tabPage5->Controls->Add(this->groupBox4);
@@ -772,7 +776,7 @@ namespace DictionaryGUI {
 			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.125F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label11->ForeColor = System::Drawing::Color::IndianRed;
-			this->label11->Location = System::Drawing::Point(215, 393);
+			this->label11->Location = System::Drawing::Point(216, 436);
 			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(280, 26);
@@ -888,6 +892,17 @@ namespace DictionaryGUI {
 			this->label5->Size = System::Drawing::Size(69, 13);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Word to add:";
+			// 
+			// button11
+			// 
+			this->button11->Location = System::Drawing::Point(293, 389);
+			this->button11->Margin = System::Windows::Forms::Padding(2);
+			this->button11->Name = L"button11";
+			this->button11->Size = System::Drawing::Size(116, 28);
+			this->button11->TabIndex = 7;
+			this->button11->Text = L"Reset dictionaries";
+			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &main::button11_Click);
 			// 
 			// main
 			// 
@@ -1068,6 +1083,10 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 		button6->Enabled = true;
 	else
 		button6->Enabled = false;
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+	resetAllDictionary(ProgramData::listOfTree);
+	saveAllTree(ProgramData::listOfTree);
 }
 };
 }
