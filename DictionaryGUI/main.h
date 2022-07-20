@@ -115,6 +115,7 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::GroupBox^ groupBox5;
 	private: System::Windows::Forms::Button^ switchData;
 	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::Label^ label11;
 
 
 
@@ -211,6 +212,7 @@ namespace DictionaryGUI {
 			this->groupBox5 = (gcnew System::Windows::Forms::GroupBox());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->switchData = (gcnew System::Windows::Forms::Button());
+			this->label11 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -752,6 +754,7 @@ namespace DictionaryGUI {
 			// 
 			// tabPage5
 			// 
+			this->tabPage5->Controls->Add(this->label11);
 			this->tabPage5->Controls->Add(this->groupBox5);
 			this->tabPage5->Controls->Add(this->groupBox4);
 			this->tabPage5->Location = System::Drawing::Point(8, 39);
@@ -835,7 +838,7 @@ namespace DictionaryGUI {
 			this->groupBox5->Controls->Add(this->comboBox1);
 			this->groupBox5->Location = System::Drawing::Point(25, 478);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Size = System::Drawing::Size(1414, 422);
+			this->groupBox5->Size = System::Drawing::Size(1414, 198);
 			this->groupBox5->TabIndex = 6;
 			this->groupBox5->TabStop = false;
 			this->groupBox5->Text = L"Switch dataset:";
@@ -859,6 +862,18 @@ namespace DictionaryGUI {
 			this->switchData->TabIndex = 6;
 			this->switchData->Text = L"Switch";
 			this->switchData->UseVisualStyleBackColor = true;
+			// 
+			// label11
+			// 
+			this->label11->AutoSize = true;
+			this->label11->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 16.125F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label11->ForeColor = System::Drawing::Color::IndianRed;
+			this->label11->Location = System::Drawing::Point(430, 756);
+			this->label11->Name = L"label11";
+			this->label11->Size = System::Drawing::Size(530, 51);
+			this->label11->TabIndex = 6;
+			this->label11->Text = L"PROJECT CS163 - KPLT";
 			// 
 			// main
 			// 
@@ -885,6 +900,7 @@ namespace DictionaryGUI {
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->tabPage5->ResumeLayout(false);
+			this->tabPage5->PerformLayout();
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
 			this->groupBox5->ResumeLayout(false);
