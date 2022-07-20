@@ -145,6 +145,7 @@ namespace DictionaryGUI {
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 		std::string changing = convertTo(changingWord); //lay tu dang chon
 		changeWord(ProgramData::currentTree, changing);
+		saveAllTree(ProgramData::listOfTree);
 		this->Hide();
 	}
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {

@@ -141,6 +141,7 @@ BBIAB  Be back in a bit
 BBL  Be back later
 BBLB  Be back later
 BBLBN  Be back later
+BBLBNT  Be back later
 BBLBNTSBO...  Be back later but not to soon because of...
 BBR  Burnt beyond repair
 BBS  Be back soon
@@ -232,6 +233,7 @@ DIY  Do it yourself
 DL  Dead link
 DLT  Dead link
 DLTB  Dead link
+DLTBB  Dead link
 DLTBBB  Don't let the bad bugs bite
 DMMGH  Don't make me get hostile
 DND  Do not disturb
@@ -298,11 +300,13 @@ FYI  For your information
 G  Grin
 G&  Grin
 G&B  Grin
+G&BI  Grin
 G&BIT  Grin and bear it
 G2B  Going to bed
 G2G  Got to go
 G2GG  Got to go
 G2GGS  Got to go
+G2GGS2  Got to go
 G2GGS2D  Got to go get something to drink
 GA  Good afternoon
 GAF  Good afternoon
@@ -319,6 +323,7 @@ GD&H  Grinning, ducking and hiding
 GD&R  Grinning, ducking and running
 GD&RA  Grinning, ducking and running
 GD&RAF  Grinning, ducking and running
+GD&RAFA  Grinning, ducking and running
 GD&RAFAP  Grinning, ducking and running as fast as possible
 GD&REF&F  grinning, ducking and running even further and faster
 GD&RF  Grinning, ducking and running fast
@@ -402,6 +407,7 @@ IBN  I'm bucked naked
 IC  I see
 ICO  I see
 ICOC  I see
+ICOCB  I see
 ICOCBW  I could of course be wrong
 IDC  I don't care
 IDGI  I don't get it
@@ -496,7 +502,8 @@ KUTGW  Keep up the good work
 KWIM  Know what I mean?
 L  Laugh
 L8  Laugh
-L8R    Later
+L8R  Laugh
+L8R     Later
 L8R G8R  Later gator
 LAB  Life's a bitch
 LBR  Little boys room
@@ -605,6 +612,7 @@ RE  Hi again (same as re's)
 ROFL  Rolling on floor laughing
 ROFLO  Rolling on floor laughing
 ROFLOL  Rolling on floor laughing
+ROFLOLA  Rolling on floor laughing
 ROFLOLAY  Rolling on floor laughing out loud at you
 ROFLOLTSDMC  Rolling on floor laughing out loud tears streaming down my cheeks
 ROFLOLUTS  Rolling on floor laughing out loud unable to speak
@@ -625,6 +633,7 @@ SETE  Smiling ear to ear
 SH  So hot
 SHI  So hot
 SHIC  So hot
+SHICP  So hot
 SHICPMP  So happy I could piss my pants
 SHID  Slaps head in disgust
 SHMILY  See how much I love you
@@ -683,6 +692,7 @@ U2  You too
 UR  Your
 URA  Your
 URAQ  Your
+URAQT  Your
 URAQT!  You are a cutie!
 UW  You're welcom
 VBG  Very big grin
@@ -747,6 +757,7 @@ YY4U  Two wise for you
 ^o  Snoring.
 `:-)  User shaved one of his eyebrows off this morning.
 d8=  Your pet beaver is wearing goggles and a hard hat.
+n0  The letter N
 n00b  Leetspeak for beginner
 {:-)  User wears a toupee.
 |-)  hee hee

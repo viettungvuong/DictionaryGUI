@@ -301,7 +301,6 @@ namespace DictionaryGUI {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(708, 328);
 			this->label1->TabIndex = 0;
-			this->label1->Text = L"test";
 			// 
 			// panel2
 			// 
@@ -405,7 +404,6 @@ namespace DictionaryGUI {
 			this->defOfWord->Name = L"defOfWord";
 			this->defOfWord->Size = System::Drawing::Size(488, 392);
 			this->defOfWord->TabIndex = 0;
-			this->defOfWord->Text = L"test";
 			// 
 			// listBox1
 			// 
