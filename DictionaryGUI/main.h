@@ -120,6 +120,9 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button11;
+	private: System::Windows::Forms::Label^ result1;
+	private: System::Windows::Forms::Label^ label12;
+
 
 
 
@@ -218,6 +221,8 @@ namespace DictionaryGUI {
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->result1 = (gcnew System::Windows::Forms::Label());
+			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -455,6 +460,7 @@ namespace DictionaryGUI {
 			// 
 			// groupBox3
 			// 
+			this->groupBox3->Controls->Add(this->label12);
 			this->groupBox3->Controls->Add(this->button5);
 			this->groupBox3->Controls->Add(this->guessWord);
 			this->groupBox3->Controls->Add(this->label8);
@@ -588,6 +594,7 @@ namespace DictionaryGUI {
 			// 
 			// groupBox1
 			// 
+			this->groupBox1->Controls->Add(this->result1);
 			this->groupBox1->Controls->Add(this->button4);
 			this->groupBox1->Controls->Add(this->guessDef);
 			this->groupBox1->Controls->Add(this->label6);
@@ -899,6 +906,32 @@ namespace DictionaryGUI {
 			this->label5->Size = System::Drawing::Size(69, 13);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Word to add:";
+			// 
+			// result1
+			// 
+			this->result1->AutoSize = true;
+			this->result1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->result1->ForeColor = System::Drawing::Color::IndianRed;
+			this->result1->Location = System::Drawing::Point(10, 402);
+			this->result1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->result1->Name = L"result1";
+			this->result1->Size = System::Drawing::Size(198, 18);
+			this->result1->TabIndex = 11;
+			this->result1->Text = L"PROJECT CS163 - KPLT";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->label12->ForeColor = System::Drawing::Color::IndianRed;
+			this->label12->Location = System::Drawing::Point(10, 402);
+			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(198, 18);
+			this->label12->TabIndex = 12;
+			this->label12->Text = L"PROJECT CS163 - KPLT";
 			// 
 			// main
 			// 
