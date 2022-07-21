@@ -917,9 +917,8 @@ namespace DictionaryGUI {
 			this->result1->Location = System::Drawing::Point(10, 402);
 			this->result1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->result1->Name = L"result1";
-			this->result1->Size = System::Drawing::Size(175, 16);
+			this->result1->Size = System::Drawing::Size(0, 16);
 			this->result1->TabIndex = 11;
-			this->result1->Text = L"PROJECT CS163 - KPLT";
 			// 
 			// result2
 			// 
@@ -930,9 +929,8 @@ namespace DictionaryGUI {
 			this->result2->Location = System::Drawing::Point(10, 402);
 			this->result2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->result2->Name = L"result2";
-			this->result2->Size = System::Drawing::Size(175, 16);
+			this->result2->Size = System::Drawing::Size(0, 16);
 			this->result2->TabIndex = 12;
-			this->result2->Text = L"PROJECT CS163 - KPLT";
 			// 
 			// main
 			// 
@@ -1056,7 +1054,12 @@ namespace DictionaryGUI {
 			   }
 			   if (selected1 == chooseWord) //dung
 			   {
-
+				   result1->ForeColor = System::Drawing::Color::Green; //chinh thanh mau xanh
+				   result1->Text = "Correct answer!";
+			   }
+			   else {
+				   result1->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
+				   result1->Text = convertFrom("Wrong answer. The correct answer is "+ tree.wordAndDefinition[chooseWord].first);
 			   }
 			   //tu dung la wordAndDefinition[chooseWord].first
 			  
@@ -1093,7 +1096,12 @@ namespace DictionaryGUI {
 			   }
 			   if (selected2 == chooseWord) //dung
 			   {
-
+				   result2->ForeColor = System::Drawing::Color::Green; //chinh thanh mau xanh
+				   result2->Text = "Correct answer!";
+			   }
+			   else {
+				   result2->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
+				   result2->Text = convertFrom("Wrong answer. The correct answer is " + tree.wordAndDefinition[chooseWord].second);
 			   }
 			   //tu dung la wordAndDefinition[chooseWord].second
 		
