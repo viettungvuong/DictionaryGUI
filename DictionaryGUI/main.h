@@ -910,26 +910,26 @@ namespace DictionaryGUI {
 			// result1
 			// 
 			this->result1->AutoSize = true;
-			this->result1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->result1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->result1->ForeColor = System::Drawing::Color::IndianRed;
 			this->result1->Location = System::Drawing::Point(10, 402);
 			this->result1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->result1->Name = L"result1";
-			this->result1->Size = System::Drawing::Size(198, 18);
+			this->result1->Size = System::Drawing::Size(175, 16);
 			this->result1->TabIndex = 11;
 			this->result1->Text = L"PROJECT CS163 - KPLT";
 			// 
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->label12->ForeColor = System::Drawing::Color::IndianRed;
 			this->label12->Location = System::Drawing::Point(10, 402);
 			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(198, 18);
+			this->label12->Size = System::Drawing::Size(175, 16);
 			this->label12->TabIndex = 12;
 			this->label12->Text = L"PROJECT CS163 - KPLT";
 			// 
