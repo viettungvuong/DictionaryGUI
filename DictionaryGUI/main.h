@@ -17,6 +17,7 @@ namespace DictionaryGUI {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	std::vector<WordAndDef> v;
+	int selected1=-1, selected2=-1; //bien de biet radio button nao dang dc chon
 	/// <summary>
 	/// Summary for main
 	/// </summary>
@@ -516,6 +517,7 @@ namespace DictionaryGUI {
 			this->radioButton5->TabStop = true;
 			this->radioButton5->Text = L"radioButton5";
 			this->radioButton5->UseVisualStyleBackColor = true;
+			this->radioButton5->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton5_CheckedChanged);
 			// 
 			// radioButton6
 			// 
@@ -527,6 +529,7 @@ namespace DictionaryGUI {
 			this->radioButton6->TabStop = true;
 			this->radioButton6->Text = L"radioButton6";
 			this->radioButton6->UseVisualStyleBackColor = true;
+			this->radioButton6->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton6_CheckedChanged);
 			// 
 			// radioButton7
 			// 
@@ -538,6 +541,7 @@ namespace DictionaryGUI {
 			this->radioButton7->TabStop = true;
 			this->radioButton7->Text = L"radioButton7";
 			this->radioButton7->UseVisualStyleBackColor = true;
+			this->radioButton7->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton7_CheckedChanged);
 			// 
 			// radioButton8
 			// 
@@ -549,6 +553,7 @@ namespace DictionaryGUI {
 			this->radioButton8->TabStop = true;
 			this->radioButton8->Text = L"radioButton8";
 			this->radioButton8->UseVisualStyleBackColor = true;
+			this->radioButton8->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton8_CheckedChanged);
 			// 
 			// label9
 			// 
@@ -647,6 +652,7 @@ namespace DictionaryGUI {
 			this->radioButton4->TabStop = true;
 			this->radioButton4->Text = L"radioButton4";
 			this->radioButton4->UseVisualStyleBackColor = true;
+			this->radioButton4->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton4_CheckedChanged);
 			// 
 			// radioButton3
 			// 
@@ -658,6 +664,7 @@ namespace DictionaryGUI {
 			this->radioButton3->TabStop = true;
 			this->radioButton3->Text = L"radioButton3";
 			this->radioButton3->UseVisualStyleBackColor = true;
+			this->radioButton3->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton3_CheckedChanged);
 			// 
 			// radioButton2
 			// 
@@ -669,6 +676,7 @@ namespace DictionaryGUI {
 			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"radioButton2";
 			this->radioButton2->UseVisualStyleBackColor = true;
+			this->radioButton2->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton2_CheckedChanged);
 			// 
 			// radioButton1
 			// 
@@ -680,6 +688,7 @@ namespace DictionaryGUI {
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"radioButton1";
 			this->radioButton1->UseVisualStyleBackColor = true;
+			this->radioButton1->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton1_CheckedChanged);
 			// 
 			// label4
 			// 
@@ -937,6 +946,8 @@ namespace DictionaryGUI {
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
 		button8->Enabled = false;
 		button7->Enabled = false;
+		button4->Enabled = false;
+		button5->Enabled = false;
 		srand(time(NULL)); //khoi tao random//Tung dang test cai nay
 		createSet(ProgramData::listOfTree);//khoi tao
 		int currentSet = 2;//mac dinh set se bang 2-dictionary 
@@ -970,6 +981,7 @@ namespace DictionaryGUI {
 
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
+		button4->Enabled = true;
 		radioButton1->Enabled = true;
 		radioButton2->Enabled = true;
 		radioButton3->Enabled = true;
@@ -1008,6 +1020,10 @@ namespace DictionaryGUI {
 				   }
 				   selected->Text = convertFrom(tree.wordAndDefinition[i].first);
 			   }
+			   if (selected1 == chooseWord) //dung
+			   {
+
+			   }
 			   //tu dung la wordAndDefinition[chooseWord].first
 			  
 		   }
@@ -1041,15 +1057,21 @@ namespace DictionaryGUI {
 				   }
 				   selected->Text = convertFrom(tree.wordAndDefinition[i].second);
 			   }
+			   if (selected2 == chooseWord) //dung
+			   {
+
+			   }
 			   //tu dung la wordAndDefinition[chooseWord].second
 		
 		   }
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		button5->Enabled = true;
 		radioButton5->Enabled = true;
 		radioButton6->Enabled = true;
 		radioButton7->Enabled = true;
 		radioButton8->Enabled = true;
 		guessRandomDefinition(ProgramData::currentTree, false);
+		//se them tgian countdown
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -1074,6 +1096,38 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
 	resetAllDictionary(ProgramData::listOfTree);
 	saveAllTree(ProgramData::listOfTree);
+}
+private: System::Void radioButton1_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	button4->Enabled = true;
+	selected1 = 0;
+}
+private: System::Void radioButton2_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	button4->Enabled = true;
+	selected1 = 1;
+}
+private: System::Void radioButton3_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	button4->Enabled = true;
+	selected1 = 2;
+}
+private: System::Void radioButton4_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	button4->Enabled = true;
+	selected1 = 3;
+}
+private: System::Void radioButton5_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	button5->Enabled = true;
+	selected2 = 0;
+}
+private: System::Void radioButton6_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	button5->Enabled = true;
+	selected2 = 1;
+}
+private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	button5->Enabled = true;
+	selected2 = 2;
+}
+private: System::Void radioButton8_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+	button5->Enabled = true;
+	selected2 = 3;
 }
 };
 }
