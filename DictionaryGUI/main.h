@@ -119,7 +119,6 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Label^ label11;
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button11;
-	private: System::Windows::Forms::Button^ button11;
 
 
 
