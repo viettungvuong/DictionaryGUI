@@ -511,7 +511,7 @@ namespace DictionaryGUI {
 			this->radioButton5->Location = System::Drawing::Point(13, 175);
 			this->radioButton5->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton5->Name = L"radioButton5";
-			this->radioButton5->Size = System::Drawing::Size(85, 17);
+			this->radioButton5->Size = System::Drawing::Size(329, 39);
 			this->radioButton5->TabIndex = 7;
 			this->radioButton5->TabStop = true;
 			this->radioButton5->Text = L"radioButton5";
@@ -522,7 +522,7 @@ namespace DictionaryGUI {
 			this->radioButton6->Location = System::Drawing::Point(13, 218);
 			this->radioButton6->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton6->Name = L"radioButton6";
-			this->radioButton6->Size = System::Drawing::Size(85, 17);
+			this->radioButton6->Size = System::Drawing::Size(329, 42);
 			this->radioButton6->TabIndex = 6;
 			this->radioButton6->TabStop = true;
 			this->radioButton6->Text = L"radioButton6";
@@ -533,7 +533,7 @@ namespace DictionaryGUI {
 			this->radioButton7->Location = System::Drawing::Point(13, 264);
 			this->radioButton7->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton7->Name = L"radioButton7";
-			this->radioButton7->Size = System::Drawing::Size(85, 17);
+			this->radioButton7->Size = System::Drawing::Size(329, 41);
 			this->radioButton7->TabIndex = 5;
 			this->radioButton7->TabStop = true;
 			this->radioButton7->Text = L"radioButton7";
@@ -544,7 +544,7 @@ namespace DictionaryGUI {
 			this->radioButton8->Location = System::Drawing::Point(13, 309);
 			this->radioButton8->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton8->Name = L"radioButton8";
-			this->radioButton8->Size = System::Drawing::Size(85, 17);
+			this->radioButton8->Size = System::Drawing::Size(329, 34);
 			this->radioButton8->TabIndex = 1;
 			this->radioButton8->TabStop = true;
 			this->radioButton8->Text = L"radioButton8";
@@ -642,7 +642,7 @@ namespace DictionaryGUI {
 			this->radioButton4->Location = System::Drawing::Point(13, 309);
 			this->radioButton4->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton4->Name = L"radioButton4";
-			this->radioButton4->Size = System::Drawing::Size(85, 17);
+			this->radioButton4->Size = System::Drawing::Size(290, 34);
 			this->radioButton4->TabIndex = 7;
 			this->radioButton4->TabStop = true;
 			this->radioButton4->Text = L"radioButton4";
@@ -653,7 +653,7 @@ namespace DictionaryGUI {
 			this->radioButton3->Location = System::Drawing::Point(13, 264);
 			this->radioButton3->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(85, 17);
+			this->radioButton3->Size = System::Drawing::Size(290, 41);
 			this->radioButton3->TabIndex = 6;
 			this->radioButton3->TabStop = true;
 			this->radioButton3->Text = L"radioButton3";
@@ -664,7 +664,7 @@ namespace DictionaryGUI {
 			this->radioButton2->Location = System::Drawing::Point(13, 218);
 			this->radioButton2->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(85, 17);
+			this->radioButton2->Size = System::Drawing::Size(302, 42);
 			this->radioButton2->TabIndex = 5;
 			this->radioButton2->TabStop = true;
 			this->radioButton2->Text = L"radioButton2";
@@ -675,7 +675,7 @@ namespace DictionaryGUI {
 			this->radioButton1->Location = System::Drawing::Point(13, 175);
 			this->radioButton1->Margin = System::Windows::Forms::Padding(2);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(85, 17);
+			this->radioButton1->Size = System::Drawing::Size(290, 39);
 			this->radioButton1->TabIndex = 1;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"radioButton1";
