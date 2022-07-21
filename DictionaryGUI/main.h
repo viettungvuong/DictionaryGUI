@@ -121,7 +121,8 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Button^ button7;
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::Label^ result1;
-	private: System::Windows::Forms::Label^ label12;
+	private: System::Windows::Forms::Label^ result2;
+
 
 
 
@@ -222,7 +223,7 @@ namespace DictionaryGUI {
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->result1 = (gcnew System::Windows::Forms::Label());
-			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->result2 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -460,7 +461,7 @@ namespace DictionaryGUI {
 			// 
 			// groupBox3
 			// 
-			this->groupBox3->Controls->Add(this->label12);
+			this->groupBox3->Controls->Add(this->result2);
 			this->groupBox3->Controls->Add(this->button5);
 			this->groupBox3->Controls->Add(this->guessWord);
 			this->groupBox3->Controls->Add(this->label8);
@@ -920,18 +921,18 @@ namespace DictionaryGUI {
 			this->result1->TabIndex = 11;
 			this->result1->Text = L"PROJECT CS163 - KPLT";
 			// 
-			// label12
+			// result2
 			// 
-			this->label12->AutoSize = true;
-			this->label12->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->result2->AutoSize = true;
+			this->result2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label12->ForeColor = System::Drawing::Color::IndianRed;
-			this->label12->Location = System::Drawing::Point(10, 402);
-			this->label12->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(175, 16);
-			this->label12->TabIndex = 12;
-			this->label12->Text = L"PROJECT CS163 - KPLT";
+			this->result2->ForeColor = System::Drawing::Color::IndianRed;
+			this->result2->Location = System::Drawing::Point(10, 402);
+			this->result2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->result2->Name = L"result2";
+			this->result2->Size = System::Drawing::Size(175, 16);
+			this->result2->TabIndex = 12;
+			this->result2->Text = L"PROJECT CS163 - KPLT";
 			// 
 			// main
 			// 
