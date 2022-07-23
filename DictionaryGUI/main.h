@@ -1128,7 +1128,7 @@ namespace DictionaryGUI {
 			result1->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
 			result1->Text = convertFrom("Wrong answer. The correct answer is " + ProgramData::currentTree.wordAndDefinition[chooseWord1].first);
 		}
-		this->Enabled = false;
+		button4->Enabled = false;
 	}
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1194,7 +1194,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 		result2->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
 		result2->Text = convertFrom("Wrong answer. The correct answer is " + ProgramData::currentTree.wordAndDefinition[chooseWord2].second);
 	}
-	this->Enabled = false;
+	button5->Enabled = false;
 }
 private: System::Void switchData_Click(System::Object^ sender, System::EventArgs^ e) {
 	currentSet = 2-comboBox1->SelectedIndex; //2 la index cua listOfTree
