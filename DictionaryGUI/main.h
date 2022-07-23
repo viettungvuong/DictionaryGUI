@@ -27,8 +27,12 @@ namespace DictionaryGUI {
 	public ref class main : public System::Windows::Forms::Form
 	{
 	public:
-		void wordOfTheDay(TernarySearchTree tree) {
-			TernaryTreeNode* t = tree.getRandomWord();
+		void wordOfTheDay(int currentSet) {
+			TernaryTreeNode* t;
+			if (currentSet == 2)
+				t = ProgramData::currentTree.getRandomWord();
+			else
+				t = ProgramData::currentTree.getRandomWord2();
 			word->Text = convertFrom(t->word);
 			def->Text = convertFrom(*t->definition);
 		}
@@ -1004,7 +1008,7 @@ namespace DictionaryGUI {
 		}
 		comboBox1->SelectedIndex = 2 - currentSet;
 		createSet(ProgramData::listOfTree);//khoi tao
-		wordOfTheDay(ProgramData::currentTree);
+		wordOfTheDay(currentSet);
 	}
 
 
@@ -1193,7 +1197,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void switchData_Click(System::Object^ sender, System::EventArgs^ e) {
 	currentSet = 2-comboBox1->SelectedIndex; //2 la index cua listOfTree
 	ProgramData::currentTree = ProgramData::listOfTree[currentSet];
-	wordOfTheDay(ProgramData::currentTree);
+	wordOfTheDay(currentSet);
 	std::ofstream ofs;
 	ofs.open("currentSet.txt");
 	ofs << currentSet;
