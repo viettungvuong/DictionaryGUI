@@ -483,14 +483,13 @@ namespace DictionaryGUI {
 			// 
 			// result2
 			// 
-			this->result2->AutoSize = true;
 			this->result2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->result2->ForeColor = System::Drawing::Color::IndianRed;
-			this->result2->Location = System::Drawing::Point(10, 402);
+			this->result2->Location = System::Drawing::Point(10, 376);
 			this->result2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->result2->Name = L"result2";
-			this->result2->Size = System::Drawing::Size(0, 16);
+			this->result2->Size = System::Drawing::Size(345, 72);
 			this->result2->TabIndex = 12;
 			// 
 			// button5
@@ -631,14 +630,13 @@ namespace DictionaryGUI {
 			// 
 			// result1
 			// 
-			this->result1->AutoSize = true;
 			this->result1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->result1->ForeColor = System::Drawing::Color::IndianRed;
-			this->result1->Location = System::Drawing::Point(10, 402);
+			this->result1->Location = System::Drawing::Point(4, 376);
 			this->result1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->result1->Name = L"result1";
-			this->result1->Size = System::Drawing::Size(0, 16);
+			this->result1->Size = System::Drawing::Size(322, 72);
 			this->result1->TabIndex = 11;
 			// 
 			// button4
@@ -1012,6 +1010,7 @@ namespace DictionaryGUI {
 			ofs << currentSet;
 			ofs.close();
 		}
+		comboBox1->SelectedIndex = 2 - currentSet;
 		createSet(ProgramData::listOfTree);//khoi tao
 		wordOfTheDay(ProgramData::currentTree);
 	}
@@ -1127,8 +1126,9 @@ namespace DictionaryGUI {
 		}
 		else {
 			result1->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
-			result1->Text = convertFrom("Wrong answer. The correct answer is " + ProgramData::currentTree.wordAndDefinition[chooseWord1].second);
+			result1->Text = convertFrom("Wrong answer. The correct answer is " + ProgramData::currentTree.wordAndDefinition[chooseWord1].first);
 		}
+		this->Enabled = false;
 	}
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1194,6 +1194,7 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 		result2->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
 		result2->Text = convertFrom("Wrong answer. The correct answer is " + ProgramData::currentTree.wordAndDefinition[chooseWord2].second);
 	}
+	this->Enabled = false;
 }
 private: System::Void switchData_Click(System::Object^ sender, System::EventArgs^ e) {
 	currentSet = 2-comboBox1->SelectedIndex; //2 la index cua listOfTree
