@@ -47,16 +47,13 @@ namespace DictionaryGUI {
 				ofs.close();
 			}
 			comboBox1->SelectedIndex = currentSet;
-			ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
+			createSet(ProgramData::listOfTree);
 			ProgramData::currentTree = ProgramData::listOfTree[currentSet];
-			wordOfTheDay(currentSet);
+			wordOfTheDay();
 		}
-		void wordOfTheDay(int currentSet) {
+		void wordOfTheDay() {
 			TernaryTreeNode* t;
-			if (currentSet == 2)
-				t = ProgramData::currentTree.getRandomWord();
-			else
-				t = ProgramData::currentTree.getRandomWord2();
+            t = ProgramData::listOfTree[2].getRandomWord();
 			word->Text = convertFrom(t->word);
 			def->Text = convertFrom(*t->definition);
 		}
@@ -1040,7 +1037,7 @@ namespace DictionaryGUI {
 		radioButton2->Enabled = true;
 		radioButton3->Enabled = true;
 		radioButton4->Enabled = true;
-		guessRandomWord(ProgramData::currentTree, false);
+		guessRandomWord(ProgramData::listOfTree[2], false);
 	}
 
 
@@ -1118,7 +1115,7 @@ namespace DictionaryGUI {
 		radioButton6->Enabled = true;
 		radioButton7->Enabled = true;
 		radioButton8->Enabled = true;
-		guessRandomDefinition(ProgramData::currentTree, false);
+		guessRandomDefinition(ProgramData::listOfTree[2], false);
 		//se them tgian countdown
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1203,9 +1200,9 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void switchData_Click(System::Object^ sender, System::EventArgs^ e) {
 	currentSet = comboBox1->SelectedIndex; //2 la index cua listOfTree
-	ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
+	/*ProgramData::listOfTree[currentSet].import_dictionary(currentSet);*/
 	ProgramData::currentTree = ProgramData::listOfTree[currentSet];
-	wordOfTheDay(currentSet);
+	wordOfTheDay();
 	std::ofstream ofs;
 	ofs.open("currentSet.txt");
 	ofs << currentSet;
