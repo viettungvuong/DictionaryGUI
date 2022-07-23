@@ -18,6 +18,7 @@ namespace DictionaryGUI {
 	using namespace System::Drawing;
 	std::vector<WordAndDef> v;
 	int selected1=-1, selected2=-1; //bien de biet radio button nao dang dc chon
+	int chooseWord1, chooseWord2;
 	/// <summary>
 	/// Summary for main
 	/// </summary>
@@ -185,6 +186,7 @@ namespace DictionaryGUI {
 			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->groupBox3 = (gcnew System::Windows::Forms::GroupBox());
+			this->result2 = (gcnew System::Windows::Forms::Label());
 			this->button5 = (gcnew System::Windows::Forms::Button());
 			this->guessWord = (gcnew System::Windows::Forms::Label());
 			this->label8 = (gcnew System::Windows::Forms::Label());
@@ -196,6 +198,7 @@ namespace DictionaryGUI {
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
+			this->result1 = (gcnew System::Windows::Forms::Label());
 			this->button4 = (gcnew System::Windows::Forms::Button());
 			this->guessDef = (gcnew System::Windows::Forms::Label());
 			this->label6 = (gcnew System::Windows::Forms::Label());
@@ -222,8 +225,6 @@ namespace DictionaryGUI {
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->result1 = (gcnew System::Windows::Forms::Label());
-			this->result2 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -481,6 +482,18 @@ namespace DictionaryGUI {
 			this->groupBox3->TabStop = false;
 			this->groupBox3->Text = L"Can you guess its meaning\?";
 			// 
+			// result2
+			// 
+			this->result2->AutoSize = true;
+			this->result2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->result2->ForeColor = System::Drawing::Color::IndianRed;
+			this->result2->Location = System::Drawing::Point(10, 402);
+			this->result2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->result2->Name = L"result2";
+			this->result2->Size = System::Drawing::Size(0, 16);
+			this->result2->TabIndex = 12;
+			// 
 			// button5
 			// 
 			this->button5->Location = System::Drawing::Point(124, 347);
@@ -490,6 +503,7 @@ namespace DictionaryGUI {
 			this->button5->TabIndex = 11;
 			this->button5->Text = L"Confirm";
 			this->button5->UseVisualStyleBackColor = true;
+			this->button5->Click += gcnew System::EventHandler(this, &main::button5_Click);
 			// 
 			// guessWord
 			// 
@@ -615,6 +629,18 @@ namespace DictionaryGUI {
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
 			this->groupBox1->Text = L"Can you guess its word\?";
+			// 
+			// result1
+			// 
+			this->result1->AutoSize = true;
+			this->result1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->result1->ForeColor = System::Drawing::Color::IndianRed;
+			this->result1->Location = System::Drawing::Point(10, 402);
+			this->result1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->result1->Name = L"result1";
+			this->result1->Size = System::Drawing::Size(0, 16);
+			this->result1->TabIndex = 11;
 			// 
 			// button4
 			// 
@@ -908,30 +934,6 @@ namespace DictionaryGUI {
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Word to add:";
 			// 
-			// result1
-			// 
-			this->result1->AutoSize = true;
-			this->result1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->result1->ForeColor = System::Drawing::Color::IndianRed;
-			this->result1->Location = System::Drawing::Point(10, 402);
-			this->result1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->result1->Name = L"result1";
-			this->result1->Size = System::Drawing::Size(0, 16);
-			this->result1->TabIndex = 11;
-			// 
-			// result2
-			// 
-			this->result2->AutoSize = true;
-			this->result2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->result2->ForeColor = System::Drawing::Color::IndianRed;
-			this->result2->Location = System::Drawing::Point(10, 402);
-			this->result2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
-			this->result2->Name = L"result2";
-			this->result2->Size = System::Drawing::Size(0, 16);
-			this->result2->TabIndex = 12;
-			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1029,8 +1031,8 @@ namespace DictionaryGUI {
 				   else
 					   tree.getRandomWord(false, i);
 			   }
-			   int chooseWord = rand() % 4;
-			   std::string show = tree.wordAndDefinition[chooseWord].second;
+			   chooseWord1 = rand() % 4;
+			   std::string show = tree.wordAndDefinition[chooseWord1].second;
 			   guessDef->Text = convertFrom(show);
 			   for (int i = 0; i < 4; i++) {
 				   RadioButton^ selected;
@@ -1052,15 +1054,7 @@ namespace DictionaryGUI {
 				   }
 				   selected->Text = convertFrom(tree.wordAndDefinition[i].first);
 			   }
-			   if (selected1!=-1&&selected1 == chooseWord) //dung
-			   {
-				   result1->ForeColor = System::Drawing::Color::Green; //chinh thanh mau xanh
-				   result1->Text = "Correct answer!";
-			   }
-			   else {
-				   result1->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
-				   result1->Text = convertFrom("Wrong answer. The correct answer is "+ tree.wordAndDefinition[chooseWord].first);
-			   }
+			  
 			   //tu dung la wordAndDefinition[chooseWord].first
 			  
 		   }
@@ -1071,8 +1065,8 @@ namespace DictionaryGUI {
 				   else
 					   tree.getRandomWord(false, i);
 			   }
-			   int chooseWord = rand() % 4;
-			   std::string show = tree.wordAndDefinition[chooseWord].first;
+			   chooseWord2 = rand() % 4;
+			   std::string show = tree.wordAndDefinition[chooseWord2].first;
 			   guessWord->Text = convertFrom(show);
 			   for (int i = 0; i < 4; i++) {
 				   RadioButton^ selected;
@@ -1094,15 +1088,7 @@ namespace DictionaryGUI {
 				   }
 				   selected->Text = convertFrom(tree.wordAndDefinition[i].second);
 			   }
-			   if (selected2!=-1&&selected2 == chooseWord) //dung
-			   {
-				   result2->ForeColor = System::Drawing::Color::Green; //chinh thanh mau xanh
-				   result2->Text = "Correct answer!";
-			   }
-			   else {
-				   result2->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
-				   result2->Text = convertFrom("Wrong answer. The correct answer is " + tree.wordAndDefinition[chooseWord].second);
-			   }
+			   
 			   //tu dung la wordAndDefinition[chooseWord].second
 		
 		   }
@@ -1116,6 +1102,15 @@ namespace DictionaryGUI {
 		//se them tgian countdown
 	}
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (selected1 != -1 && selected1 == chooseWord1) //dung
+		{
+			result1->ForeColor = System::Drawing::Color::Green; //chinh thanh mau xanh
+			result1->Text = "Correct answer!";
+		}
+		else {
+			result1->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
+			result1->Text = convertFrom("Wrong answer. The correct answer is " + ProgramData::currentTree.wordAndDefinition[chooseWord1].second);
+		}
 	}
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {
 }
@@ -1170,6 +1165,17 @@ private: System::Void radioButton7_CheckedChanged(System::Object^ sender, System
 private: System::Void radioButton8_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 	button5->Enabled = true;
 	selected2 = 3;
+}
+private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (selected2 != -1 && selected2 == chooseWord2) //dung
+	{
+		result2->ForeColor = System::Drawing::Color::Green; //chinh thanh mau xanh
+		result2->Text = "Correct answer!";
+	}
+	else {
+		result2->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
+		result2->Text = convertFrom("Wrong answer. The correct answer is " + ProgramData::currentTree.wordAndDefinition[chooseWord2].second);
+	}
 }
 };
 }
