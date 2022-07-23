@@ -1008,6 +1008,7 @@ namespace DictionaryGUI {
 		}
 		comboBox1->SelectedIndex = currentSet;
 		ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
+		ProgramData::currentTree = ProgramData::listOfTree[currentSet];
 		wordOfTheDay(currentSet);
 	}
 
