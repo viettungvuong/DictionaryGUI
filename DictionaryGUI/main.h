@@ -846,7 +846,7 @@ namespace DictionaryGUI {
 			this->comboBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10.125F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->comboBox1->FormattingEnabled = true;
-			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"English words", L"Emojis", L"Slangs" });
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Slang", L"Emoji", L"English word" });
 			this->comboBox1->Location = System::Drawing::Point(18, 24);
 			this->comboBox1->Margin = System::Windows::Forms::Padding(2);
 			this->comboBox1->Name = L"comboBox1";
@@ -1006,8 +1006,8 @@ namespace DictionaryGUI {
 			ofs << currentSet;
 			ofs.close();
 		}
-		comboBox1->SelectedIndex = 2 - currentSet;
-		createSet(ProgramData::listOfTree);//khoi tao
+		comboBox1->SelectedIndex = currentSet;
+		ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
 		wordOfTheDay(currentSet);
 	}
 
@@ -1195,7 +1195,8 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 	selected2 = -1;
 }
 private: System::Void switchData_Click(System::Object^ sender, System::EventArgs^ e) {
-	currentSet = 2-comboBox1->SelectedIndex; //2 la index cua listOfTree
+	currentSet = comboBox1->SelectedIndex; //2 la index cua listOfTree
+	ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
 	ProgramData::currentTree = ProgramData::listOfTree[currentSet];
 	wordOfTheDay(currentSet);
 	std::ofstream ofs;
