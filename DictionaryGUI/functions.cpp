@@ -3,7 +3,9 @@
 TernarySearchTree ProgramData::listOfTree[3];
 TernarySearchTree ProgramData::currentTree = ProgramData::listOfTree[2]; //mac dinh
 
-
+//0 la slang
+//1 la emoji
+//2 la english
 
 void deletetree(TernaryTreeNode* root)
 {

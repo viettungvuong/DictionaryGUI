@@ -6,6 +6,7 @@
 #include <string>
 #include "edit.h"
 #include <msclr\marshal_cppstd.h>
+#include <fstream>
 
 
 namespace DictionaryGUI {
@@ -19,6 +20,7 @@ namespace DictionaryGUI {
 	std::vector<WordAndDef> v;
 	int selected1=-1, selected2=-1; //bien de biet radio button nao dang dc chon
 	int chooseWord1, chooseWord2;
+	int currentSet;
 	/// <summary>
 	/// Summary for main
 	/// </summary>
@@ -33,9 +35,6 @@ namespace DictionaryGUI {
 		main(void)
 		{
 			InitializeComponent();
-			srand(time(NULL)); //khoi tao random//Tung dang test cai nay
-			createSet(ProgramData::listOfTree);//khoi tao
-			int currentSet = 2;//mac dinh set se bang 2-dictionary k
 			//
 			//TODO: Add the constructor code here
 			//
@@ -846,6 +845,7 @@ namespace DictionaryGUI {
 			this->switchData->TabIndex = 6;
 			this->switchData->Text = L"Switch";
 			this->switchData->UseVisualStyleBackColor = true;
+			this->switchData->Click += gcnew System::EventHandler(this, &main::switchData_Click);
 			// 
 			// comboBox1
 			// 
@@ -977,16 +977,20 @@ namespace DictionaryGUI {
 		label1->Text = convertFrom(def);
 		button8->Enabled = true;
 	}
+		   bool fileExists(const std::string& name) {
+			   struct stat buffer;
+			   return (stat(name.c_str(), &buffer) == 0);
+		   };
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
 		button8->Enabled = false;
 		button7->Enabled = false;
 		button4->Enabled = false;
 		button5->Enabled = false;
 		srand(time(NULL)); //khoi tao random//Tung dang test cai nay
-		createSet(ProgramData::listOfTree);//khoi tao
-		int currentSet = 2;//mac dinh set se bang 2-dictionary 
+
+		//mac dinh set se bang 2-dictionary 
 		/*wordOfTheDay();*/
-		wordOfTheDay(ProgramData::listOfTree[2]);
+
 		radioButton1->Enabled = false;
 		radioButton2->Enabled = false;
 		radioButton3->Enabled = false;
@@ -995,13 +999,27 @@ namespace DictionaryGUI {
 		radioButton6->Enabled = false;
 		radioButton7->Enabled = false;
 		radioButton8->Enabled = false;
-
+		currentSet = 2;
+		if (fileExists("currentSet.txt")) {
+			std::ifstream ifs;
+			ifs.open("currentSet.txt");
+			ifs >> currentSet;
+			ifs.close();
+		}
+		else {
+			std::ofstream ofs;
+			ofs.open("currentSet.txt");
+			ofs << currentSet;
+			ofs.close();
+		}
+		createSet(ProgramData::listOfTree);//khoi tao
+		wordOfTheDay(ProgramData::currentTree);
 	}
 
 
 
 	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {
-		v = (ProgramData::listOfTree[2].search4Definition(convertTo(textBox2->Text)));
+		v = (ProgramData::currentTree).search4Definition(convertTo(textBox2->Text));
 		v2ListView(v, listBox1);
 	}
 	private: System::Void listBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -1176,6 +1194,15 @@ private: System::Void button5_Click(System::Object^ sender, System::EventArgs^ e
 		result2->ForeColor = System::Drawing::Color::Red; //chinh thanh mau do
 		result2->Text = convertFrom("Wrong answer. The correct answer is " + ProgramData::currentTree.wordAndDefinition[chooseWord2].second);
 	}
+}
+private: System::Void switchData_Click(System::Object^ sender, System::EventArgs^ e) {
+	currentSet = 2-comboBox1->SelectedIndex; //2 la index cua listOfTree
+	ProgramData::currentTree = ProgramData::listOfTree[currentSet];
+	wordOfTheDay(ProgramData::currentTree);
+	std::ofstream ofs;
+	ofs.open("currentSet.txt");
+	ofs << currentSet;
+	ofs.close();
 }
 };
 }
