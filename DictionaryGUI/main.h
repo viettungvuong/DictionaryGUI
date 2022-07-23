@@ -27,6 +27,30 @@ namespace DictionaryGUI {
 	public ref class main : public System::Windows::Forms::Form
 	{
 	public:
+		bool fileExists(const std::string& name) {
+			struct stat buffer;
+			return (stat(name.c_str(), &buffer) == 0);
+		}
+		void load() {
+			srand(time(NULL)); //khoi tao random//Tung dang test cai nay
+			currentSet = 2;
+			if (fileExists("currentSet.txt")) {
+				std::ifstream ifs;
+				ifs.open("currentSet.txt");
+				ifs >> currentSet;
+				ifs.close();
+			}
+			else {
+				std::ofstream ofs;
+				ofs.open("currentSet.txt");
+				ofs << currentSet;
+				ofs.close();
+			}
+			comboBox1->SelectedIndex = currentSet;
+			ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
+			ProgramData::currentTree = ProgramData::listOfTree[currentSet];
+			wordOfTheDay(currentSet);
+		}
 		void wordOfTheDay(int currentSet) {
 			TernaryTreeNode* t;
 			if (currentSet == 2)
@@ -39,6 +63,7 @@ namespace DictionaryGUI {
 		main(void)
 		{
 			InitializeComponent();
+			load();
 			//
 			//TODO: Add the constructor code here
 			//
@@ -971,16 +996,13 @@ namespace DictionaryGUI {
 		label1->Text = convertFrom(def);
 		button8->Enabled = true;
 	}
-		   bool fileExists(const std::string& name) {
-			   struct stat buffer;
-			   return (stat(name.c_str(), &buffer) == 0);
-		   };
+
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
 		button8->Enabled = false;
 		button7->Enabled = false;
 		button4->Enabled = false;
 		button5->Enabled = false;
-		srand(time(NULL)); //khoi tao random//Tung dang test cai nay
+	
 
 		//mac dinh set se bang 2-dictionary 
 		/*wordOfTheDay();*/
@@ -993,23 +1015,7 @@ namespace DictionaryGUI {
 		radioButton6->Enabled = false;
 		radioButton7->Enabled = false;
 		radioButton8->Enabled = false;
-		currentSet = 2;
-		if (fileExists("currentSet.txt")) {
-			std::ifstream ifs;
-			ifs.open("currentSet.txt");
-			ifs >> currentSet;
-			ifs.close();
-		}
-		else {
-			std::ofstream ofs;
-			ofs.open("currentSet.txt");
-			ofs << currentSet;
-			ofs.close();
-		}
-		comboBox1->SelectedIndex = currentSet;
-		ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
-		ProgramData::currentTree = ProgramData::listOfTree[currentSet];
-		wordOfTheDay(currentSet);
+
 	}
 
 
