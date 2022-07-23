@@ -534,7 +534,6 @@ namespace DictionaryGUI {
 			this->radioButton5->Size = System::Drawing::Size(329, 39);
 			this->radioButton5->TabIndex = 7;
 			this->radioButton5->TabStop = true;
-			this->radioButton5->Text = L"radioButton5";
 			this->radioButton5->UseVisualStyleBackColor = true;
 			this->radioButton5->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton5_CheckedChanged);
 			// 
@@ -546,7 +545,6 @@ namespace DictionaryGUI {
 			this->radioButton6->Size = System::Drawing::Size(329, 42);
 			this->radioButton6->TabIndex = 6;
 			this->radioButton6->TabStop = true;
-			this->radioButton6->Text = L"radioButton6";
 			this->radioButton6->UseVisualStyleBackColor = true;
 			this->radioButton6->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton6_CheckedChanged);
 			// 
@@ -558,7 +556,6 @@ namespace DictionaryGUI {
 			this->radioButton7->Size = System::Drawing::Size(329, 41);
 			this->radioButton7->TabIndex = 5;
 			this->radioButton7->TabStop = true;
-			this->radioButton7->Text = L"radioButton7";
 			this->radioButton7->UseVisualStyleBackColor = true;
 			this->radioButton7->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton7_CheckedChanged);
 			// 
@@ -570,7 +567,6 @@ namespace DictionaryGUI {
 			this->radioButton8->Size = System::Drawing::Size(329, 34);
 			this->radioButton8->TabIndex = 1;
 			this->radioButton8->TabStop = true;
-			this->radioButton8->Text = L"radioButton8";
 			this->radioButton8->UseVisualStyleBackColor = true;
 			this->radioButton8->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton8_CheckedChanged);
 			// 
@@ -681,7 +677,6 @@ namespace DictionaryGUI {
 			this->radioButton4->Size = System::Drawing::Size(290, 34);
 			this->radioButton4->TabIndex = 7;
 			this->radioButton4->TabStop = true;
-			this->radioButton4->Text = L"radioButton4";
 			this->radioButton4->UseVisualStyleBackColor = true;
 			this->radioButton4->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton4_CheckedChanged);
 			// 
@@ -693,7 +688,6 @@ namespace DictionaryGUI {
 			this->radioButton3->Size = System::Drawing::Size(290, 41);
 			this->radioButton3->TabIndex = 6;
 			this->radioButton3->TabStop = true;
-			this->radioButton3->Text = L"radioButton3";
 			this->radioButton3->UseVisualStyleBackColor = true;
 			this->radioButton3->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton3_CheckedChanged);
 			// 
@@ -705,7 +699,6 @@ namespace DictionaryGUI {
 			this->radioButton2->Size = System::Drawing::Size(302, 42);
 			this->radioButton2->TabIndex = 5;
 			this->radioButton2->TabStop = true;
-			this->radioButton2->Text = L"radioButton2";
 			this->radioButton2->UseVisualStyleBackColor = true;
 			this->radioButton2->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton2_CheckedChanged);
 			// 
@@ -717,7 +710,6 @@ namespace DictionaryGUI {
 			this->radioButton1->Size = System::Drawing::Size(290, 39);
 			this->radioButton1->TabIndex = 1;
 			this->radioButton1->TabStop = true;
-			this->radioButton1->Text = L"radioButton1";
 			this->radioButton1->UseVisualStyleBackColor = true;
 			this->radioButton1->CheckedChanged += gcnew System::EventHandler(this, &main::radioButton1_CheckedChanged);
 			// 
