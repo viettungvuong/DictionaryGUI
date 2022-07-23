@@ -1024,7 +1024,7 @@ namespace DictionaryGUI {
 	}
 
 
-		   void guessRandomWord(TernarySearchTree tree, bool nonWord) {
+		   void guessRandomWord(TernarySearchTree& tree, bool nonWord) {
 			   for (int i = 0; i < 4; i++) {
 				   if (nonWord)
 					   tree.getRandomWord2(false, i);
@@ -1058,7 +1058,7 @@ namespace DictionaryGUI {
 			   //tu dung la wordAndDefinition[chooseWord].first
 			  
 		   }
-		   void guessRandomDefinition(TernarySearchTree tree, bool nonWord) {
+		   void guessRandomDefinition(TernarySearchTree& tree, bool nonWord) {
 			   for (int i = 0; i < 4; i++) {
 				   if (nonWord)
 					   tree.getRandomWord2(false, i);
