@@ -1052,7 +1052,7 @@ namespace DictionaryGUI {
 				   }
 				   selected->Text = convertFrom(tree.wordAndDefinition[i].first);
 			   }
-			   if (selected1 == chooseWord) //dung
+			   if (selected1!=-1&&selected1 == chooseWord) //dung
 			   {
 				   result1->ForeColor = System::Drawing::Color::Green; //chinh thanh mau xanh
 				   result1->Text = "Correct answer!";
@@ -1094,7 +1094,7 @@ namespace DictionaryGUI {
 				   }
 				   selected->Text = convertFrom(tree.wordAndDefinition[i].second);
 			   }
-			   if (selected2 == chooseWord) //dung
+			   if (selected2!=-1&&selected2 == chooseWord) //dung
 			   {
 				   result2->ForeColor = System::Drawing::Color::Green; //chinh thanh mau xanh
 				   result2->Text = "Correct answer!";
