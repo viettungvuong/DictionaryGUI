@@ -1013,6 +1013,7 @@ private: System::Windows::Forms::ListBox^ suggestedWords;
 		for (auto s : v) {
 			suggestedWords->Items->Add(convertFrom(s.word));
 		}
+		
 		suggesting = v;
 	}
 
