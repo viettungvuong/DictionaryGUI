@@ -601,13 +601,15 @@ void TernarySearchTree::inorderTraversalForSearch(TernaryTreeNode* node, std::st
 void TernarySearchTree::inorderTraversalForSuggest(TernaryTreeNode* node, std::string currentStr, std::vector<WordAndDef>& suggest) {
 	if (!node)
 		return;
-	inorderTraversalForSuggest(node->left, currentStr, suggest);
+
 	if (node->definition) {
 		WordAndDef newWaD;
 		newWaD.word = currentStr + node->ch;
 		newWaD.definition = *node->definition;
 		suggest.push_back(newWaD);
 	}
+	inorderTraversalForSuggest(node->left, currentStr, suggest);
+
 	inorderTraversalForSuggest(node->mid, currentStr + node->ch, suggest);
 
 	inorderTraversalForSuggest(node->right, currentStr, suggest);
