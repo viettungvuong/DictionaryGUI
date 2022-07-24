@@ -124,7 +124,9 @@
   <ItemGroup>
     <ClCompile Include="console.cpp" />
     <ClCompile Include="edit.cpp" />
+    <ClCompile Include="favorite.cpp" />
     <ClCompile Include="functions.cpp" />
+    <ClCompile Include="history.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="Screen.cpp" />
@@ -135,7 +137,9 @@
     <ClInclude Include="edit.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="favorite.h" />
     <ClInclude Include="functions.h" />
+    <ClInclude Include="history.h" />
     <ClInclude Include="main.h">
       <FileType>CppForm</FileType>
     </ClInclude>
