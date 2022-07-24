@@ -48,7 +48,9 @@ namespace DictionaryGUI {
 				ofs.close();
 			}
 			comboBox1->SelectedIndex = currentSet;
-			createSet(ProgramData::listOfTree);
+			ProgramData::listOfTree[2].import_dictionary(2);
+			if (currentSet!=2)
+			   ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
 			ProgramData::currentTree = ProgramData::listOfTree[currentSet];
 			wordOfTheDay();
 		}
