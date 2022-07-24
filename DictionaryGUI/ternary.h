@@ -55,6 +55,7 @@ public:
 	void inorderTraversal();
 	std::vector<WordAndDef> search4Definition(std::string definition);
 	std::pair<std::string, std::string> wordAndDefinition[4]; //de lam guess game
+	void inorderTraversalForSuggest(TernaryTreeNode* node, std::string currentStr, std::vector<std::string>& suggest);
 
 private:
 	void inorderTraversalAux(TernaryTreeNode* node, std::string currentStr);

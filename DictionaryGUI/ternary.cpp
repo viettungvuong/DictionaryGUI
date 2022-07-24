@@ -598,6 +598,17 @@ void TernarySearchTree::inorderTraversalForSearch(TernaryTreeNode* node, std::st
 	inorderTraversalForSearch(node->mid, currentStr + node->ch, definition, v);
 	inorderTraversalForSearch(node->right, currentStr, definition, v);
 }
+void TernarySearchTree::inorderTraversalForSuggest(TernaryTreeNode* node, std::string currentStr, std::vector<std::string>& suggest) {
+	if (!node)
+		return;
+	inorderTraversalForSuggest(node->left, currentStr, suggest);
+	if (node->definition) {
+		suggest.push_back(currentStr);
+	}
+	inorderTraversalForSuggest(node->mid, currentStr + node->ch, suggest);
+	inorderTraversalForSuggest(node->right, currentStr, suggest);
+
+}
 std::vector<WordAndDef> TernarySearchTree::search4Definition(std::string definition) {
 	std::vector<WordAndDef> ans;
 	inorderTraversalForSearch(this->root, "", definition, ans);

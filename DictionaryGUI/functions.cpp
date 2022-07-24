@@ -133,3 +133,14 @@ void v2ListView(std::vector<WordAndDef> v, System::Windows::Forms::ListBox^ lb) 
 		lb->Items->Add(convertFrom(wad.word));
 	}
 }
+
+std::vector<std::string> suggestWords(std::string soFar) {
+	std::vector<std::string> v;
+	if (soFar.empty()||soFar.length()==1)
+		return v;
+	TernaryTreeNode* t = ProgramData::currentTree.search4keyword(soFar);
+	if (t) {
+		ProgramData::currentTree.inorderTraversalForSuggest(t, soFar, v);
+	}
+	return v;
+}

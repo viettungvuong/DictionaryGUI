@@ -392,11 +392,12 @@ private: System::Windows::Forms::ListBox^ suggestedWords;
 			// 
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->textBox1->Location = System::Drawing::Point(3, 103);
+			this->textBox1->Location = System::Drawing::Point(4, 103);
 			this->textBox1->Margin = System::Windows::Forms::Padding(2);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(451, 28);
+			this->textBox1->Size = System::Drawing::Size(450, 28);
 			this->textBox1->TabIndex = 6;
+			this->textBox1->TextChanged += gcnew System::EventHandler(this, &main::textBox1_TextChanged);
 			// 
 			// tabPage6
 			// 
@@ -1218,6 +1219,13 @@ private: System::Void switchData_Click(System::Object^ sender, System::EventArgs
 	ofs.open("currentSet.txt");
 	ofs << currentSet;
 	ofs.close();
+}
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	suggestedWords->Items->Clear();
+	std::vector<std::string> v = suggestWords(convertTo(textBox1->Text));
+	for (auto s : v) {
+		suggestedWords->Items->Add(convertFrom(s));
+	}
 }
 };
 }
