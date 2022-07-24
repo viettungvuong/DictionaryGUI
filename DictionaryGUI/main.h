@@ -367,13 +367,12 @@ private: System::Windows::Forms::ListBox^ suggestedWords;
 			// 
 			// def
 			// 
-			this->def->AutoSize = true;
 			this->def->Font = (gcnew System::Drawing::Font(L"Arial", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->def->Location = System::Drawing::Point(17, 33);
 			this->def->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->def->Name = L"def";
-			this->def->Size = System::Drawing::Size(59, 15);
+			this->def->Size = System::Drawing::Size(675, 47);
 			this->def->TabIndex = 2;
 			this->def->Text = L"Definition";
 			// 
