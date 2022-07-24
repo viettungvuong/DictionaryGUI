@@ -148,6 +148,8 @@ namespace DictionaryGUI {
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::Label^ result1;
 	private: System::Windows::Forms::Label^ result2;
+private: System::Windows::Forms::ListBox^ suggestedWords;
+
 
 
 
@@ -250,6 +252,7 @@ namespace DictionaryGUI {
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->suggestedWords = (gcnew System::Windows::Forms::ListBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -281,6 +284,7 @@ namespace DictionaryGUI {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->suggestedWords);
 			this->tabPage1->Controls->Add(this->button8);
 			this->tabPage1->Controls->Add(this->button1);
 			this->tabPage1->Controls->Add(this->panel1);
@@ -320,10 +324,10 @@ namespace DictionaryGUI {
 			// panel1
 			// 
 			this->panel1->Controls->Add(this->label1);
-			this->panel1->Location = System::Drawing::Point(3, 138);
+			this->panel1->Location = System::Drawing::Point(208, 138);
 			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(708, 328);
+			this->panel1->Size = System::Drawing::Size(503, 328);
 			this->panel1->TabIndex = 9;
 			// 
 			// label1
@@ -334,7 +338,7 @@ namespace DictionaryGUI {
 			this->label1->Location = System::Drawing::Point(0, 0);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(708, 328);
+			this->label1->Size = System::Drawing::Size(503, 328);
 			this->label1->TabIndex = 0;
 			// 
 			// panel2
@@ -538,7 +542,6 @@ namespace DictionaryGUI {
 			this->guessWord->Name = L"guessWord";
 			this->guessWord->Size = System::Drawing::Size(345, 52);
 			this->guessWord->TabIndex = 9;
-			this->guessWord->Text = L"def here";
 			// 
 			// label8
 			// 
@@ -548,9 +551,9 @@ namespace DictionaryGUI {
 			this->label8->Location = System::Drawing::Point(10, 106);
 			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(73, 15);
+			this->label8->Size = System::Drawing::Size(44, 15);
 			this->label8->TabIndex = 8;
-			this->label8->Text = L"Definition:";
+			this->label8->Text = L"Word:";
 			// 
 			// radioButton5
 			// 
@@ -681,7 +684,6 @@ namespace DictionaryGUI {
 			this->guessDef->Name = L"guessDef";
 			this->guessDef->Size = System::Drawing::Size(305, 52);
 			this->guessDef->TabIndex = 9;
-			this->guessDef->Text = L"def here";
 			// 
 			// label6
 			// 
@@ -949,6 +951,15 @@ namespace DictionaryGUI {
 			this->label5->Size = System::Drawing::Size(69, 13);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Word to add:";
+			// 
+			// suggestedWords
+			// 
+			this->suggestedWords->FormattingEnabled = true;
+			this->suggestedWords->Location = System::Drawing::Point(4, 135);
+			this->suggestedWords->Margin = System::Windows::Forms::Padding(2);
+			this->suggestedWords->Name = L"suggestedWords";
+			this->suggestedWords->Size = System::Drawing::Size(200, 329);
+			this->suggestedWords->TabIndex = 10;
 			// 
 			// main
 			// 
