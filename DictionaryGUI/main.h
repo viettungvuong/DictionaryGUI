@@ -18,6 +18,7 @@ namespace DictionaryGUI {
 	using namespace System::Data;
 	using namespace System::Drawing;
 	std::vector<WordAndDef> v;
+	std::vector<WordAndDef> suggesting;
 	int selected1=-1, selected2=-1; //bien de biet radio button nao dang dc chon
 	int chooseWord1, chooseWord2;
 	int currentSet;
@@ -195,6 +196,7 @@ private: System::Windows::Forms::ListBox^ suggestedWords;
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->suggestedWords = (gcnew System::Windows::Forms::ListBox());
 			this->button8 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
@@ -252,7 +254,6 @@ private: System::Windows::Forms::ListBox^ suggestedWords;
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->suggestedWords = (gcnew System::Windows::Forms::ListBox());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -298,6 +299,16 @@ private: System::Windows::Forms::ListBox^ suggestedWords;
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Search by word";
 			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// suggestedWords
+			// 
+			this->suggestedWords->FormattingEnabled = true;
+			this->suggestedWords->Location = System::Drawing::Point(4, 135);
+			this->suggestedWords->Margin = System::Windows::Forms::Padding(2);
+			this->suggestedWords->Name = L"suggestedWords";
+			this->suggestedWords->Size = System::Drawing::Size(200, 329);
+			this->suggestedWords->TabIndex = 10;
+			this->suggestedWords->SelectedIndexChanged += gcnew System::EventHandler(this, &main::suggestedWords_SelectedIndexChanged);
 			// 
 			// button8
 			// 
@@ -953,15 +964,6 @@ private: System::Windows::Forms::ListBox^ suggestedWords;
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Word to add:";
 			// 
-			// suggestedWords
-			// 
-			this->suggestedWords->FormattingEnabled = true;
-			this->suggestedWords->Location = System::Drawing::Point(4, 135);
-			this->suggestedWords->Margin = System::Windows::Forms::Padding(2);
-			this->suggestedWords->Name = L"suggestedWords";
-			this->suggestedWords->Size = System::Drawing::Size(200, 329);
-			this->suggestedWords->TabIndex = 10;
-			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1001,9 +1003,17 @@ private: System::Windows::Forms::ListBox^ suggestedWords;
 			label1->Text = "Not found";
 			return;
 		}
+
 		std::string def = *find->definition;
 		label1->Text = convertFrom(def);
 		button8->Enabled = true;
+
+		suggestedWords->Items->Clear();
+		std::vector<WordAndDef> v = suggestWords(convertTo(textBox1->Text));
+		for (auto s : v) {
+			suggestedWords->Items->Add(convertFrom(s.word));
+		}
+		suggesting = v;
 	}
 
 	private: System::Void main_Load(System::Object^ sender, System::EventArgs^ e) {
@@ -1222,10 +1232,20 @@ private: System::Void switchData_Click(System::Object^ sender, System::EventArgs
 }
 private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	suggestedWords->Items->Clear();
-	std::vector<std::string> v = suggestWords(convertTo(textBox1->Text));
+	std::vector<WordAndDef> v = suggestWords(convertTo(textBox1->Text));
 	for (auto s : v) {
-		suggestedWords->Items->Add(convertFrom(s));
+		suggestedWords->Items->Add(convertFrom(s.word));
 	}
+	suggesting = v;
+}
+private: System::Void suggestedWords_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (!suggesting.empty()) {
+		label1->Text = convertFrom(suggesting[suggestedWords->SelectedIndex].definition); //xuat definition khi dc chon
+	}
+	if (suggestedWords->SelectedIndex != -1)
+		button8->Enabled = true;
+	else
+		button8->Enabled = false;
 }
 };
 }

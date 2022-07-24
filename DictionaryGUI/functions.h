@@ -21,4 +21,4 @@ void changeSet(int& currentSet);
 std::string convertTo(System::String^ input);
 System::String^ convertFrom(std::string input);
 void v2ListView(std::vector<WordAndDef> v, System::Windows::Forms::ListBox^ lb);
-std::vector<std::string> suggestWords(std::string soFar);
+std::vector<WordAndDef> suggestWords(std::string soFar);
