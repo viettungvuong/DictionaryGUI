@@ -9,6 +9,7 @@ public:
 	void initDefinition(); //ham de them def khi load
 	void saveToFile();
 	void loadFromFile();
+	void addToHistory(WordAndDef wad, int dictionaryNo);
 };
 
 
