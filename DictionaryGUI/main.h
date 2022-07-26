@@ -266,7 +266,16 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
 			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->button12 = (gcnew System::Windows::Forms::Button());
+			this->panel4 = (gcnew System::Windows::Forms::Panel());
+			this->label12 = (gcnew System::Windows::Forms::Label());
+			this->favoriteList = (gcnew System::Windows::Forms::ListBox());
 			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->button14 = (gcnew System::Windows::Forms::Button());
+			this->button13 = (gcnew System::Windows::Forms::Button());
+			this->panel5 = (gcnew System::Windows::Forms::Panel());
+			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->historyList = (gcnew System::Windows::Forms::ListBox());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->label11 = (gcnew System::Windows::Forms::Label());
@@ -280,15 +289,6 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->favoriteList = (gcnew System::Windows::Forms::ListBox());
-			this->panel4 = (gcnew System::Windows::Forms::Panel());
-			this->label12 = (gcnew System::Windows::Forms::Label());
-			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->historyList = (gcnew System::Windows::Forms::ListBox());
-			this->panel5 = (gcnew System::Windows::Forms::Panel());
-			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -299,12 +299,12 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->groupBox3->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->tabPage3->SuspendLayout();
+			this->panel4->SuspendLayout();
 			this->tabPage4->SuspendLayout();
+			this->panel5->SuspendLayout();
 			this->tabPage5->SuspendLayout();
 			this->groupBox5->SuspendLayout();
 			this->groupBox4->SuspendLayout();
-			this->panel4->SuspendLayout();
-			this->panel5->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// tabControl1
@@ -316,7 +316,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Controls->Add(this->tabPage5);
 			this->tabControl1->Location = System::Drawing::Point(12, 12);
-			this->tabControl1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabControl1->Margin = System::Windows::Forms::Padding(4);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(1476, 950);
@@ -331,9 +331,9 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->tabPage1->Controls->Add(this->panel2);
 			this->tabPage1->Controls->Add(this->textBox1);
 			this->tabPage1->Location = System::Drawing::Point(8, 39);
-			this->tabPage1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage1->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage1->Padding = System::Windows::Forms::Padding(4);
 			this->tabPage1->Size = System::Drawing::Size(1460, 903);
 			this->tabPage1->TabIndex = 0;
 			this->tabPage1->Text = L"Search by word";
@@ -344,7 +344,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->suggestedWords->FormattingEnabled = true;
 			this->suggestedWords->ItemHeight = 25;
 			this->suggestedWords->Location = System::Drawing::Point(8, 260);
-			this->suggestedWords->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->suggestedWords->Margin = System::Windows::Forms::Padding(4);
 			this->suggestedWords->Name = L"suggestedWords";
 			this->suggestedWords->Size = System::Drawing::Size(396, 629);
 			this->suggestedWords->TabIndex = 10;
@@ -353,7 +353,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button8
 			// 
 			this->button8->Location = System::Drawing::Point(1200, 196);
-			this->button8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button8->Margin = System::Windows::Forms::Padding(4);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(222, 63);
 			this->button8->TabIndex = 12;
@@ -364,7 +364,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button1
 			// 
 			this->button1->Location = System::Drawing::Point(936, 196);
-			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(256, 63);
 			this->button1->TabIndex = 7;
@@ -376,7 +376,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// 
 			this->panel1->Controls->Add(this->label1);
 			this->panel1->Location = System::Drawing::Point(416, 265);
-			this->panel1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panel1->Margin = System::Windows::Forms::Padding(4);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(1006, 631);
 			this->panel1->TabIndex = 9;
@@ -398,7 +398,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->panel2->Controls->Add(this->word);
 			this->panel2->Controls->Add(this->label2);
 			this->panel2->Location = System::Drawing::Point(6, 6);
-			this->panel2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panel2->Margin = System::Windows::Forms::Padding(4);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(1416, 173);
 			this->panel2->TabIndex = 10;
@@ -443,7 +443,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->textBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox1->Location = System::Drawing::Point(8, 198);
-			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(896, 49);
 			this->textBox1->TabIndex = 6;
@@ -457,7 +457,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->tabPage6->Controls->Add(this->button6);
 			this->tabPage6->Controls->Add(this->textBox2);
 			this->tabPage6->Location = System::Drawing::Point(8, 39);
-			this->tabPage6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage6->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage6->Name = L"tabPage6";
 			this->tabPage6->Size = System::Drawing::Size(1460, 903);
 			this->tabPage6->TabIndex = 5;
@@ -467,7 +467,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button7
 			// 
 			this->button7->Location = System::Drawing::Point(1174, 44);
-			this->button7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button7->Margin = System::Windows::Forms::Padding(4);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(254, 63);
 			this->button7->TabIndex = 13;
@@ -479,7 +479,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// 
 			this->panel3->Controls->Add(this->defOfWord);
 			this->panel3->Location = System::Drawing::Point(452, 129);
-			this->panel3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->panel3->Margin = System::Windows::Forms::Padding(4);
 			this->panel3->Name = L"panel3";
 			this->panel3->Size = System::Drawing::Size(976, 754);
 			this->panel3->TabIndex = 10;
@@ -500,7 +500,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->listBox1->FormattingEnabled = true;
 			this->listBox1->ItemHeight = 25;
 			this->listBox1->Location = System::Drawing::Point(26, 129);
-			this->listBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->listBox1->Margin = System::Windows::Forms::Padding(4);
 			this->listBox1->Name = L"listBox1";
 			this->listBox1->Size = System::Drawing::Size(396, 754);
 			this->listBox1->TabIndex = 9;
@@ -509,7 +509,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button6
 			// 
 			this->button6->Location = System::Drawing::Point(992, 44);
-			this->button6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button6->Margin = System::Windows::Forms::Padding(4);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(168, 63);
 			this->button6->TabIndex = 8;
@@ -522,7 +522,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->textBox2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 13.875F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
 			this->textBox2->Location = System::Drawing::Point(26, 46);
-			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(934, 49);
 			this->textBox2->TabIndex = 7;
@@ -533,9 +533,9 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->tabPage2->Controls->Add(this->groupBox3);
 			this->tabPage2->Controls->Add(this->groupBox1);
 			this->tabPage2->Location = System::Drawing::Point(8, 39);
-			this->tabPage2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage2->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage2->Padding = System::Windows::Forms::Padding(4);
 			this->tabPage2->Size = System::Drawing::Size(1460, 903);
 			this->tabPage2->TabIndex = 1;
 			this->tabPage2->Text = L"Can you guess it!\?";
@@ -555,9 +555,9 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->groupBox3->Controls->Add(this->label10);
 			this->groupBox3->Controls->Add(this->button3);
 			this->groupBox3->Location = System::Drawing::Point(720, 27);
-			this->groupBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox3->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox3->Name = L"groupBox3";
-			this->groupBox3->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox3->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox3->Size = System::Drawing::Size(718, 869);
 			this->groupBox3->TabIndex = 10;
 			this->groupBox3->TabStop = false;
@@ -577,7 +577,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button5
 			// 
 			this->button5->Location = System::Drawing::Point(248, 667);
-			this->button5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button5->Margin = System::Windows::Forms::Padding(4);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(180, 52);
 			this->button5->TabIndex = 11;
@@ -610,7 +610,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// radioButton5
 			// 
 			this->radioButton5->Location = System::Drawing::Point(26, 337);
-			this->radioButton5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->radioButton5->Margin = System::Windows::Forms::Padding(4);
 			this->radioButton5->Name = L"radioButton5";
 			this->radioButton5->Size = System::Drawing::Size(658, 75);
 			this->radioButton5->TabIndex = 7;
@@ -621,7 +621,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// radioButton6
 			// 
 			this->radioButton6->Location = System::Drawing::Point(26, 419);
-			this->radioButton6->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->radioButton6->Margin = System::Windows::Forms::Padding(4);
 			this->radioButton6->Name = L"radioButton6";
 			this->radioButton6->Size = System::Drawing::Size(658, 81);
 			this->radioButton6->TabIndex = 6;
@@ -632,7 +632,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// radioButton7
 			// 
 			this->radioButton7->Location = System::Drawing::Point(26, 508);
-			this->radioButton7->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->radioButton7->Margin = System::Windows::Forms::Padding(4);
 			this->radioButton7->Name = L"radioButton7";
 			this->radioButton7->Size = System::Drawing::Size(658, 79);
 			this->radioButton7->TabIndex = 5;
@@ -643,7 +643,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// radioButton8
 			// 
 			this->radioButton8->Location = System::Drawing::Point(26, 594);
-			this->radioButton8->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->radioButton8->Margin = System::Windows::Forms::Padding(4);
 			this->radioButton8->Name = L"radioButton8";
 			this->radioButton8->Size = System::Drawing::Size(658, 65);
 			this->radioButton8->TabIndex = 1;
@@ -674,7 +674,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button3
 			// 
 			this->button3->Location = System::Drawing::Point(26, 127);
-			this->button3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button3->Margin = System::Windows::Forms::Padding(4);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(180, 52);
 			this->button3->TabIndex = 2;
@@ -697,9 +697,9 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->groupBox1->Controls->Add(this->button2);
 			this->groupBox1->Controls->Add(this->groupBox2);
 			this->groupBox1->Location = System::Drawing::Point(16, 27);
-			this->groupBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox1->Name = L"groupBox1";
-			this->groupBox1->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox1->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox1->Size = System::Drawing::Size(660, 869);
 			this->groupBox1->TabIndex = 0;
 			this->groupBox1->TabStop = false;
@@ -719,7 +719,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button4
 			// 
 			this->button4->Location = System::Drawing::Point(244, 667);
-			this->button4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button4->Margin = System::Windows::Forms::Padding(4);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(180, 52);
 			this->button4->TabIndex = 10;
@@ -752,7 +752,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// radioButton4
 			// 
 			this->radioButton4->Location = System::Drawing::Point(26, 594);
-			this->radioButton4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->radioButton4->Margin = System::Windows::Forms::Padding(4);
 			this->radioButton4->Name = L"radioButton4";
 			this->radioButton4->Size = System::Drawing::Size(580, 65);
 			this->radioButton4->TabIndex = 7;
@@ -763,7 +763,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// radioButton3
 			// 
 			this->radioButton3->Location = System::Drawing::Point(26, 508);
-			this->radioButton3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->radioButton3->Margin = System::Windows::Forms::Padding(4);
 			this->radioButton3->Name = L"radioButton3";
 			this->radioButton3->Size = System::Drawing::Size(580, 79);
 			this->radioButton3->TabIndex = 6;
@@ -774,7 +774,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// radioButton2
 			// 
 			this->radioButton2->Location = System::Drawing::Point(26, 419);
-			this->radioButton2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->radioButton2->Margin = System::Windows::Forms::Padding(4);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(604, 81);
 			this->radioButton2->TabIndex = 5;
@@ -785,7 +785,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// radioButton1
 			// 
 			this->radioButton1->Location = System::Drawing::Point(26, 337);
-			this->radioButton1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->radioButton1->Margin = System::Windows::Forms::Padding(4);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(580, 75);
 			this->radioButton1->TabIndex = 1;
@@ -816,7 +816,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button2
 			// 
 			this->button2->Location = System::Drawing::Point(26, 127);
-			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(180, 52);
 			this->button2->TabIndex = 2;
@@ -827,9 +827,9 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// groupBox2
 			// 
 			this->groupBox2->Location = System::Drawing::Point(698, 0);
-			this->groupBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox2->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox2->Name = L"groupBox2";
-			this->groupBox2->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox2->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox2->Size = System::Drawing::Size(724, 869);
 			this->groupBox2->TabIndex = 1;
 			this->groupBox2->TabStop = false;
@@ -841,12 +841,49 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->tabPage3->Controls->Add(this->panel4);
 			this->tabPage3->Controls->Add(this->favoriteList);
 			this->tabPage3->Location = System::Drawing::Point(8, 39);
-			this->tabPage3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage3->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage3->Name = L"tabPage3";
 			this->tabPage3->Size = System::Drawing::Size(1460, 903);
 			this->tabPage3->TabIndex = 2;
 			this->tabPage3->Text = L"Favorites";
 			this->tabPage3->UseVisualStyleBackColor = true;
+			// 
+			// button12
+			// 
+			this->button12->Location = System::Drawing::Point(1189, 805);
+			this->button12->Name = L"button12";
+			this->button12->Size = System::Drawing::Size(236, 69);
+			this->button12->TabIndex = 12;
+			this->button12->Text = L"Remove";
+			this->button12->UseVisualStyleBackColor = true;
+			// 
+			// panel4
+			// 
+			this->panel4->Controls->Add(this->label12);
+			this->panel4->Location = System::Drawing::Point(483, 20);
+			this->panel4->Name = L"panel4";
+			this->panel4->Size = System::Drawing::Size(956, 764);
+			this->panel4->TabIndex = 11;
+			// 
+			// label12
+			// 
+			this->label12->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->label12->Location = System::Drawing::Point(0, 0);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(956, 764);
+			this->label12->TabIndex = 0;
+			this->label12->Text = L"label12";
+			// 
+			// favoriteList
+			// 
+			this->favoriteList->FormattingEnabled = true;
+			this->favoriteList->ItemHeight = 25;
+			this->favoriteList->Location = System::Drawing::Point(38, 20);
+			this->favoriteList->Margin = System::Windows::Forms::Padding(4);
+			this->favoriteList->Name = L"favoriteList";
+			this->favoriteList->Size = System::Drawing::Size(422, 854);
+			this->favoriteList->TabIndex = 10;
+			this->favoriteList->SelectedIndexChanged += gcnew System::EventHandler(this, &main::favoriteList_SelectedIndexChanged);
 			// 
 			// tabPage4
 			// 
@@ -855,12 +892,58 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->tabPage4->Controls->Add(this->panel5);
 			this->tabPage4->Controls->Add(this->historyList);
 			this->tabPage4->Location = System::Drawing::Point(8, 39);
-			this->tabPage4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage4->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage4->Name = L"tabPage4";
 			this->tabPage4->Size = System::Drawing::Size(1460, 903);
 			this->tabPage4->TabIndex = 3;
 			this->tabPage4->Text = L"History";
 			this->tabPage4->UseVisualStyleBackColor = true;
+			// 
+			// button14
+			// 
+			this->button14->Location = System::Drawing::Point(1193, 810);
+			this->button14->Name = L"button14";
+			this->button14->Size = System::Drawing::Size(190, 70);
+			this->button14->TabIndex = 14;
+			this->button14->Text = L"Clear all";
+			this->button14->UseVisualStyleBackColor = true;
+			// 
+			// button13
+			// 
+			this->button13->Location = System::Drawing::Point(969, 810);
+			this->button13->Name = L"button13";
+			this->button13->Size = System::Drawing::Size(190, 70);
+			this->button13->TabIndex = 13;
+			this->button13->Text = L"Remove";
+			this->button13->UseVisualStyleBackColor = true;
+			// 
+			// panel5
+			// 
+			this->panel5->Controls->Add(this->label13);
+			this->panel5->Location = System::Drawing::Point(481, 14);
+			this->panel5->Name = L"panel5";
+			this->panel5->Size = System::Drawing::Size(950, 780);
+			this->panel5->TabIndex = 12;
+			// 
+			// label13
+			// 
+			this->label13->Dock = System::Windows::Forms::DockStyle::Fill;
+			this->label13->Location = System::Drawing::Point(0, 0);
+			this->label13->Name = L"label13";
+			this->label13->Size = System::Drawing::Size(950, 780);
+			this->label13->TabIndex = 0;
+			this->label13->Text = L"label13";
+			// 
+			// historyList
+			// 
+			this->historyList->FormattingEnabled = true;
+			this->historyList->ItemHeight = 25;
+			this->historyList->Location = System::Drawing::Point(25, 14);
+			this->historyList->Margin = System::Windows::Forms::Padding(4);
+			this->historyList->Name = L"historyList";
+			this->historyList->Size = System::Drawing::Size(422, 854);
+			this->historyList->TabIndex = 11;
+			this->historyList->SelectedIndexChanged += gcnew System::EventHandler(this, &main::historyList_SelectedIndexChanged);
 			// 
 			// tabPage5
 			// 
@@ -869,7 +952,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->tabPage5->Controls->Add(this->groupBox5);
 			this->tabPage5->Controls->Add(this->groupBox4);
 			this->tabPage5->Location = System::Drawing::Point(8, 39);
-			this->tabPage5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->tabPage5->Margin = System::Windows::Forms::Padding(4);
 			this->tabPage5->Name = L"tabPage5";
 			this->tabPage5->Size = System::Drawing::Size(1460, 903);
 			this->tabPage5->TabIndex = 4;
@@ -879,7 +962,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button11
 			// 
 			this->button11->Location = System::Drawing::Point(586, 748);
-			this->button11->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button11->Margin = System::Windows::Forms::Padding(4);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(232, 54);
 			this->button11->TabIndex = 7;
@@ -905,9 +988,9 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->groupBox5->Controls->Add(this->switchData);
 			this->groupBox5->Controls->Add(this->comboBox1);
 			this->groupBox5->Location = System::Drawing::Point(24, 479);
-			this->groupBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox5->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox5->Name = L"groupBox5";
-			this->groupBox5->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox5->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox5->Size = System::Drawing::Size(1414, 198);
 			this->groupBox5->TabIndex = 6;
 			this->groupBox5->TabStop = false;
@@ -916,7 +999,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// switchData
 			// 
 			this->switchData->Location = System::Drawing::Point(1152, 117);
-			this->switchData->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->switchData->Margin = System::Windows::Forms::Padding(4);
 			this->switchData->Name = L"switchData";
 			this->switchData->Size = System::Drawing::Size(232, 54);
 			this->switchData->TabIndex = 6;
@@ -931,7 +1014,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->comboBox1->FormattingEnabled = true;
 			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(3) { L"Slang", L"Emoji", L"English word" });
 			this->comboBox1->Location = System::Drawing::Point(36, 46);
-			this->comboBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->comboBox1->Margin = System::Windows::Forms::Padding(4);
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(1016, 39);
 			this->comboBox1->TabIndex = 0;
@@ -945,9 +1028,9 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->groupBox4->Controls->Add(this->textBox3);
 			this->groupBox4->Controls->Add(this->label5);
 			this->groupBox4->Location = System::Drawing::Point(24, 27);
-			this->groupBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox4->Margin = System::Windows::Forms::Padding(4);
 			this->groupBox4->Name = L"groupBox4";
-			this->groupBox4->Padding = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->groupBox4->Padding = System::Windows::Forms::Padding(4);
 			this->groupBox4->Size = System::Drawing::Size(1414, 421);
 			this->groupBox4->TabIndex = 0;
 			this->groupBox4->TabStop = false;
@@ -956,7 +1039,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button10
 			// 
 			this->button10->Location = System::Drawing::Point(1042, 304);
-			this->button10->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button10->Margin = System::Windows::Forms::Padding(4);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(232, 54);
 			this->button10->TabIndex = 5;
@@ -966,7 +1049,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// textBox4
 			// 
 			this->textBox4->Location = System::Drawing::Point(36, 238);
-			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4);
 			this->textBox4->Multiline = true;
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(898, 117);
@@ -985,7 +1068,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// button9
 			// 
 			this->button9->Location = System::Drawing::Point(1042, 87);
-			this->button9->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->button9->Margin = System::Windows::Forms::Padding(4);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(232, 54);
 			this->button9->TabIndex = 2;
@@ -995,7 +1078,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// textBox3
 			// 
 			this->textBox3->Location = System::Drawing::Point(36, 94);
-			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4);
 			this->textBox3->Multiline = true;
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(898, 44);
@@ -1011,94 +1094,13 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Word to add:";
 			// 
-			// favoriteList
-			// 
-			this->favoriteList->FormattingEnabled = true;
-			this->favoriteList->ItemHeight = 25;
-			this->favoriteList->Location = System::Drawing::Point(38, 20);
-			this->favoriteList->Margin = System::Windows::Forms::Padding(4);
-			this->favoriteList->Name = L"favoriteList";
-			this->favoriteList->Size = System::Drawing::Size(422, 854);
-			this->favoriteList->TabIndex = 10;
-			// 
-			// panel4
-			// 
-			this->panel4->Controls->Add(this->label12);
-			this->panel4->Location = System::Drawing::Point(483, 20);
-			this->panel4->Name = L"panel4";
-			this->panel4->Size = System::Drawing::Size(956, 764);
-			this->panel4->TabIndex = 11;
-			// 
-			// label12
-			// 
-			this->label12->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->label12->Location = System::Drawing::Point(0, 0);
-			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(956, 764);
-			this->label12->TabIndex = 0;
-			this->label12->Text = L"label12";
-			// 
-			// button12
-			// 
-			this->button12->Location = System::Drawing::Point(1189, 805);
-			this->button12->Name = L"button12";
-			this->button12->Size = System::Drawing::Size(236, 69);
-			this->button12->TabIndex = 12;
-			this->button12->Text = L"Remove";
-			this->button12->UseVisualStyleBackColor = true;
-			// 
-			// historyList
-			// 
-			this->historyList->FormattingEnabled = true;
-			this->historyList->ItemHeight = 25;
-			this->historyList->Location = System::Drawing::Point(25, 14);
-			this->historyList->Margin = System::Windows::Forms::Padding(4);
-			this->historyList->Name = L"historyList";
-			this->historyList->Size = System::Drawing::Size(422, 854);
-			this->historyList->TabIndex = 11;
-			// 
-			// panel5
-			// 
-			this->panel5->Controls->Add(this->label13);
-			this->panel5->Location = System::Drawing::Point(481, 14);
-			this->panel5->Name = L"panel5";
-			this->panel5->Size = System::Drawing::Size(950, 780);
-			this->panel5->TabIndex = 12;
-			// 
-			// label13
-			// 
-			this->label13->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->label13->Location = System::Drawing::Point(0, 0);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(950, 780);
-			this->label13->TabIndex = 0;
-			this->label13->Text = L"label13";
-			// 
-			// button13
-			// 
-			this->button13->Location = System::Drawing::Point(969, 810);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(190, 70);
-			this->button13->TabIndex = 13;
-			this->button13->Text = L"Remove";
-			this->button13->UseVisualStyleBackColor = true;
-			// 
-			// button14
-			// 
-			this->button14->Location = System::Drawing::Point(1193, 810);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(190, 70);
-			this->button14->TabIndex = 14;
-			this->button14->Text = L"Clear all";
-			this->button14->UseVisualStyleBackColor = true;
-			// 
 			// main
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(12, 25);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1492, 960);
 			this->Controls->Add(this->tabControl1);
-			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
+			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"main";
 			this->Text = L"Dictionary";
 			this->Load += gcnew System::EventHandler(this, &main::main_Load);
@@ -1117,14 +1119,14 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->groupBox1->ResumeLayout(false);
 			this->groupBox1->PerformLayout();
 			this->tabPage3->ResumeLayout(false);
+			this->panel4->ResumeLayout(false);
 			this->tabPage4->ResumeLayout(false);
+			this->panel5->ResumeLayout(false);
 			this->tabPage5->ResumeLayout(false);
 			this->tabPage5->PerformLayout();
 			this->groupBox5->ResumeLayout(false);
 			this->groupBox4->ResumeLayout(false);
 			this->groupBox4->PerformLayout();
-			this->panel4->ResumeLayout(false);
-			this->panel5->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}
@@ -1155,7 +1157,9 @@ private: System::Windows::Forms::ListBox^ historyList;
 		button4->Enabled = false;
 		button5->Enabled = false;
 	
-
+		button12->Enabled = false;
+		button13->Enabled = false;
+		button14->Enabled = false;
 		//mac dinh set se bang 2-dictionary 
 		/*wordOfTheDay();*/
 
@@ -1379,6 +1383,29 @@ private: System::Void suggestedWords_SelectedIndexChanged(System::Object^ sender
 		button8->Enabled = true;
 	else
 		button8->Enabled = false;
+}
+private: System::Void favoriteList_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (favorite.words.size() > 0) {
+		defOfWord->Text = convertFrom(favorite.words[favoriteList->SelectedIndex].definition); //xuat definition khi dc chon
+	}
+	if (favoriteList->SelectedIndex != -1)
+		button12->Enabled = true;
+	else
+		button12->Enabled = false;
+}
+private: System::Void historyList_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+	if (history.words.size() > 0) {
+		defOfWord->Text = convertFrom(history.words[historyList->SelectedIndex].definition); //xuat definition khi dc chon
+	}
+	if (favoriteList->SelectedIndex != -1) {
+		button13->Enabled = true;
+		button14->Enabled = true;
+	}
+	else
+	{
+		button13->Enabled = false;
+		button14->Enabled = false;
+	}
 }
 };
 }
