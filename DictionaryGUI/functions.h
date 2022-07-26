@@ -23,7 +23,4 @@ System::String^ convertFrom(std::string input);
 void v2ListView(std::vector<WordAndDef> v, System::Windows::Forms::ListBox^ lb);
 std::vector<WordAndDef> suggestWords(std::string soFar);
 
-bool fileExists(const std::string& name) {
-	struct stat buffer;
-	return (stat(name.c_str(), &buffer) == 0);
-}
+bool fileExists(const std::string& name);

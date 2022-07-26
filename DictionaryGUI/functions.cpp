@@ -145,3 +145,7 @@ std::vector<WordAndDef> suggestWords(std::string soFar) {
 	}
 	return v;
 }
+bool fileExists(const std::string& name) {
+	struct stat buffer;
+	return (stat(name.c_str(), &buffer) == 0);
+}
