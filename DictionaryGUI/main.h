@@ -7,7 +7,8 @@
 #include "edit.h"
 #include <msclr\marshal_cppstd.h>
 #include <fstream>
-
+#include "favorite.h"
+#include "history.h"
 
 namespace DictionaryGUI {
 
@@ -22,6 +23,8 @@ namespace DictionaryGUI {
 	int selected1=-1, selected2=-1; //bien de biet radio button nao dang dc chon
 	int chooseWord1, chooseWord2;
 	int currentSet;
+	History history;
+	Favorite favorite;
 	/// <summary>
 	/// Summary for main
 	/// </summary>
@@ -33,6 +36,10 @@ namespace DictionaryGUI {
 			return (stat(name.c_str(), &buffer) == 0);
 		}
 		void load() {
+			//load history va favorite
+			history.loadFromFile();
+			favorite.loadFromFile();
+
 			srand(time(NULL)); //khoi tao random//Tung dang test cai nay
 			currentSet = 2;
 			if (fileExists("currentSet.txt")) {
