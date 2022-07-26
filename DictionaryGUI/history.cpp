@@ -1,7 +1,7 @@
 #include "history.h"
 #include "functions.h"
 #include <fstream>
-void History::initDefinition(WordAndDef wad) {
+void History::initDefinition() {
 	for (int i = 0; i < words.size(); i++) {
 		words[i].definition = *ProgramData::listOfTree[dictionaryNo[i]].search4keyword(words[i].word)->definition;
 	}
@@ -25,4 +25,5 @@ void History::loadFromFile() {
 		ifs >> dictionaryNo[i++];
 	}
 	ifs.close();
+	initDefinition();
 }

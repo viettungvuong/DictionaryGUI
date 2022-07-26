@@ -39,6 +39,12 @@ namespace DictionaryGUI {
 			//load history va favorite
 			history.loadFromFile();
 			favorite.loadFromFile();
+			if (history.words.size() > 0) {
+				v2ListView(history.words, historyList);
+			}
+			if (favorite.words.size() > 0) {
+				v2ListView(favorite.words, favoriteList);
+			}
 
 			srand(time(NULL)); //khoi tao random//Tung dang test cai nay
 			currentSet = 2;
