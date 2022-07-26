@@ -175,6 +175,7 @@ private: System::Windows::Forms::Button^ button13;
 private: System::Windows::Forms::Panel^ panel5;
 private: System::Windows::Forms::Label^ label13;
 private: System::Windows::Forms::ListBox^ historyList;
+private: System::Windows::Forms::Button^ button15;
 
 
 
@@ -289,6 +290,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
+			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->tabControl1->SuspendLayout();
 			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
@@ -324,6 +326,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->button15);
 			this->tabPage1->Controls->Add(this->suggestedWords);
 			this->tabPage1->Controls->Add(this->button8);
 			this->tabPage1->Controls->Add(this->button1);
@@ -352,7 +355,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			// 
 			// button8
 			// 
-			this->button8->Location = System::Drawing::Point(1200, 196);
+			this->button8->Location = System::Drawing::Point(1054, 196);
 			this->button8->Margin = System::Windows::Forms::Padding(4);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(222, 63);
@@ -366,7 +369,7 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->button1->Location = System::Drawing::Point(936, 196);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(256, 63);
+			this->button1->Size = System::Drawing::Size(110, 63);
 			this->button1->TabIndex = 7;
 			this->button1->Text = L"Search";
 			this->button1->UseVisualStyleBackColor = true;
@@ -1093,6 +1096,16 @@ private: System::Windows::Forms::ListBox^ historyList;
 			this->label5->Size = System::Drawing::Size(135, 25);
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Word to add:";
+			// 
+			// button15
+			// 
+			this->button15->Location = System::Drawing::Point(1284, 198);
+			this->button15->Margin = System::Windows::Forms::Padding(4);
+			this->button15->Name = L"button15";
+			this->button15->Size = System::Drawing::Size(172, 63);
+			this->button15->TabIndex = 13;
+			this->button15->Text = L"Add to favorite";
+			this->button15->UseVisualStyleBackColor = true;
 			// 
 			// main
 			// 
