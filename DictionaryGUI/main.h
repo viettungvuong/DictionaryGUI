@@ -161,13 +161,15 @@ namespace DictionaryGUI {
 private: System::Windows::Forms::ListBox^ suggestedWords;
 private: System::Windows::Forms::Panel^ panel4;
 private: System::Windows::Forms::Label^ label12;
-private: System::Windows::Forms::ListBox^ listBox2;
+private: System::Windows::Forms::ListBox^ favoriteList;
+
 private: System::Windows::Forms::Button^ button12;
 private: System::Windows::Forms::Button^ button14;
 private: System::Windows::Forms::Button^ button13;
 private: System::Windows::Forms::Panel^ panel5;
 private: System::Windows::Forms::Label^ label13;
-private: System::Windows::Forms::ListBox^ listBox3;
+private: System::Windows::Forms::ListBox^ historyList;
+
 
 
 
@@ -272,11 +274,11 @@ private: System::Windows::Forms::ListBox^ listBox3;
 			this->button9 = (gcnew System::Windows::Forms::Button());
 			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->listBox2 = (gcnew System::Windows::Forms::ListBox());
+			this->favoriteList = (gcnew System::Windows::Forms::ListBox());
 			this->panel4 = (gcnew System::Windows::Forms::Panel());
 			this->label12 = (gcnew System::Windows::Forms::Label());
 			this->button12 = (gcnew System::Windows::Forms::Button());
-			this->listBox3 = (gcnew System::Windows::Forms::ListBox());
+			this->historyList = (gcnew System::Windows::Forms::ListBox());
 			this->panel5 = (gcnew System::Windows::Forms::Panel());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->button13 = (gcnew System::Windows::Forms::Button());
@@ -831,7 +833,7 @@ private: System::Windows::Forms::ListBox^ listBox3;
 			// 
 			this->tabPage3->Controls->Add(this->button12);
 			this->tabPage3->Controls->Add(this->panel4);
-			this->tabPage3->Controls->Add(this->listBox2);
+			this->tabPage3->Controls->Add(this->favoriteList);
 			this->tabPage3->Location = System::Drawing::Point(8, 39);
 			this->tabPage3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tabPage3->Name = L"tabPage3";
@@ -845,7 +847,7 @@ private: System::Windows::Forms::ListBox^ listBox3;
 			this->tabPage4->Controls->Add(this->button14);
 			this->tabPage4->Controls->Add(this->button13);
 			this->tabPage4->Controls->Add(this->panel5);
-			this->tabPage4->Controls->Add(this->listBox3);
+			this->tabPage4->Controls->Add(this->historyList);
 			this->tabPage4->Location = System::Drawing::Point(8, 39);
 			this->tabPage4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->tabPage4->Name = L"tabPage4";
@@ -1003,15 +1005,15 @@ private: System::Windows::Forms::ListBox^ listBox3;
 			this->label5->TabIndex = 0;
 			this->label5->Text = L"Word to add:";
 			// 
-			// listBox2
+			// favoriteList
 			// 
-			this->listBox2->FormattingEnabled = true;
-			this->listBox2->ItemHeight = 25;
-			this->listBox2->Location = System::Drawing::Point(38, 20);
-			this->listBox2->Margin = System::Windows::Forms::Padding(4);
-			this->listBox2->Name = L"listBox2";
-			this->listBox2->Size = System::Drawing::Size(422, 854);
-			this->listBox2->TabIndex = 10;
+			this->favoriteList->FormattingEnabled = true;
+			this->favoriteList->ItemHeight = 25;
+			this->favoriteList->Location = System::Drawing::Point(38, 20);
+			this->favoriteList->Margin = System::Windows::Forms::Padding(4);
+			this->favoriteList->Name = L"favoriteList";
+			this->favoriteList->Size = System::Drawing::Size(422, 854);
+			this->favoriteList->TabIndex = 10;
 			// 
 			// panel4
 			// 
@@ -1039,15 +1041,15 @@ private: System::Windows::Forms::ListBox^ listBox3;
 			this->button12->Text = L"Remove";
 			this->button12->UseVisualStyleBackColor = true;
 			// 
-			// listBox3
+			// historyList
 			// 
-			this->listBox3->FormattingEnabled = true;
-			this->listBox3->ItemHeight = 25;
-			this->listBox3->Location = System::Drawing::Point(25, 14);
-			this->listBox3->Margin = System::Windows::Forms::Padding(4);
-			this->listBox3->Name = L"listBox3";
-			this->listBox3->Size = System::Drawing::Size(422, 854);
-			this->listBox3->TabIndex = 11;
+			this->historyList->FormattingEnabled = true;
+			this->historyList->ItemHeight = 25;
+			this->historyList->Location = System::Drawing::Point(25, 14);
+			this->historyList->Margin = System::Windows::Forms::Padding(4);
+			this->historyList->Name = L"historyList";
+			this->historyList->Size = System::Drawing::Size(422, 854);
+			this->historyList->TabIndex = 11;
 			// 
 			// panel5
 			// 
