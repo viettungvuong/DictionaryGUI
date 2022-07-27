@@ -13,6 +13,14 @@
 struct WordAndDef {
 	std::string word;
 	std::string definition;
+	bool operator ==(const WordAndDef& a) const
+	{
+		if (word != a.word)
+			return false;
+		if (definition != a.definition)
+			return false;
+		return true;
+	}
 };
 
 struct LinkedListNode {

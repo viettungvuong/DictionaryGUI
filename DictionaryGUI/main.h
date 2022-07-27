@@ -1461,10 +1461,17 @@ private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ 
 	history.saveToFile();
 }
 private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
-	bool found = std::find(favorite.words.begin(), favorite.words.end(), textBox1->Text) != v.end();
+	bool found = false;
+	for (int i = 0; i < favorite.words.size(); i++) {
+		if (favorite.words[i].word == convertTo(textBox1->Text)) {
+			found = true;
+			break;
+		}
+	}
 	if (found) {
 		WordAndDef wad;
 		wad.word = convertTo(textBox1->Text);
+		wad.definition = convertTo(label1->Text);
 		favorite.words.push_back(wad);
 		favorite.dictionaryNo.push_back(currentSet); //them vao danh sach favorite va luu no thuoc tu dien nao
 		favorite.saveToFile();
