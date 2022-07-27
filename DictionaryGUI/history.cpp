@@ -19,10 +19,15 @@ void History::loadFromFile() {
 		return;
 	std::ifstream ifs;
 	ifs.open("history.txt");
-	int i = 0;
 	while (ifs.is_open()) {
-		std::getline(ifs, words[i].word);
-		ifs >> dictionaryNo[i++];
+		std::string temp;
+		std::getline(ifs, temp);
+		WordAndDef wad;
+		wad.word = temp;
+		words.push_back(wad);
+		int temp2;
+		ifs >> temp2;
+		dictionaryNo.push_back(temp2);
 	}
 	ifs.close();
 	initDefinition();
