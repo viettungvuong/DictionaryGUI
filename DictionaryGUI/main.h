@@ -347,10 +347,11 @@ private: System::Windows::Forms::Button^ button15;
 			this->button15->Location = System::Drawing::Point(1284, 198);
 			this->button15->Margin = System::Windows::Forms::Padding(4);
 			this->button15->Name = L"button15";
-			this->button15->Size = System::Drawing::Size(172, 63);
+			this->button15->Size = System::Drawing::Size(138, 63);
 			this->button15->TabIndex = 13;
 			this->button15->Text = L"Add to favorite";
 			this->button15->UseVisualStyleBackColor = true;
+			this->button15->Click += gcnew System::EventHandler(this, &main::button15_Click);
 			// 
 			// suggestedWords
 			// 
@@ -1164,6 +1165,7 @@ private: System::Windows::Forms::Button^ button15;
 		std::string def = *find->definition;
 		label1->Text = convertFrom(def);
 		button8->Enabled = true;
+		button15->Enabled = true;
 
 		suggestedWords->Items->Clear();
 		std::vector<WordAndDef> v = suggestWords(convertTo(textBox1->Text));
@@ -1183,7 +1185,7 @@ private: System::Windows::Forms::Button^ button15;
 		button7->Enabled = false;
 		button4->Enabled = false;
 		button5->Enabled = false;
-	
+		button15->Enabled = false;
 		button12->Enabled = false;
 		button13->Enabled = false;
 		button14->Enabled = false;
@@ -1403,11 +1405,11 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 	suggesting = v;
 }
 private: System::Void suggestedWords_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
-	if (!suggesting.empty()) {
+	if (suggestedWords->SelectedIndex != -1) {
+		button8->Enabled = true;
+		textBox1->Text = convertFrom(suggesting[suggestedWords->SelectedIndex].word);
 		label1->Text = convertFrom(suggesting[suggestedWords->SelectedIndex].definition); //xuat definition khi dc chon
 	}
-	if (suggestedWords->SelectedIndex != -1)
-		button8->Enabled = true;
 	else
 		button8->Enabled = false;
 }
@@ -1439,6 +1441,8 @@ private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ 
 		int i = favoriteList->SelectedIndex;
 		favoriteList->Items->RemoveAt(i);
 		favorite.words.erase(favorite.words.begin() + i);
+		favorite.dictionaryNo.erase(favorite.dictionaryNo.begin() + i);
+		favorite.saveToFile();
 	}
 }
 private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1446,11 +1450,25 @@ private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ 
 		int i = historyList->SelectedIndex;
 		historyList->Items->RemoveAt(i);
 		history.words.erase(history.words.begin() + i);
+		history.dictionaryNo.erase(history.dictionaryNo.begin() + i);
+		history.saveToFile();
 	}
 }
 private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
 	history.words.clear();
 	historyList->Items->Clear();
+	history.dictionaryNo.clear();
+	history.saveToFile();
+}
+private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
+	bool found = std::find(favorite.words.begin(), favorite.words.end(), textBox1->Text) != v.end();
+	if (found) {
+		WordAndDef wad;
+		wad.word = convertTo(textBox1->Text);
+		favorite.words.push_back(wad);
+		favorite.dictionaryNo.push_back(currentSet); //them vao danh sach favorite va luu no thuoc tu dien nao
+		favorite.saveToFile();
+	}
 }
 };
 }
