@@ -29,6 +29,7 @@ void History::loadFromFile() {
 		ifs >> temp2;
 		dictionaryNo.push_back(temp2);
 	}
+	words.pop_back();
 	ifs.close();
 	initDefinition();
 }

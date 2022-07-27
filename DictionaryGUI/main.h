@@ -1432,7 +1432,7 @@ private: System::Void historyList_SelectedIndexChanged(System::Object^ sender, S
 	if (history.words.size() > 0) {
 		label13 ->Text = convertFrom(history.words[historyList->SelectedIndex].definition); //xuat definition khi dc chon
 	}
-	if (favoriteList->SelectedIndex != -1) {
+	if (historyList->SelectedIndex != -1) {
 		button13->Enabled = true;
 		button14->Enabled = true;
 	}
