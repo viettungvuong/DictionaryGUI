@@ -37,15 +37,7 @@ namespace DictionaryGUI {
 		}
 		void load() {
 			//load history va favorite
-			history.loadFromFile();
-			favorite.loadFromFile();
-			if (history.words.size() > 0) {
-				v2ListView(history.words, historyList);
-			}
-			if (favorite.words.size() > 0) {
-				v2ListView(favorite.words, favoriteList);
-			}
-
+			
 			srand(time(NULL)); //khoi tao random//Tung dang test cai nay
 			currentSet = 2;
 			if (fileExists("currentSet.txt")) {
@@ -66,6 +58,15 @@ namespace DictionaryGUI {
 			   ProgramData::listOfTree[currentSet].import_dictionary(currentSet);
 			ProgramData::currentTree = ProgramData::listOfTree[currentSet];
 			wordOfTheDay();
+			history.loadFromFile();
+			favorite.loadFromFile();
+			if (history.words.size() > 0) {
+				v2ListView(history.words, historyList);
+			}
+			if (favorite.words.size() > 0) {
+				v2ListView(favorite.words, favoriteList);
+			}
+
 		}
 		void wordOfTheDay() {
 			TernaryTreeNode* t;
@@ -1427,7 +1428,7 @@ private: System::Void favoriteList_SelectedIndexChanged(System::Object^ sender, 
 }
 private: System::Void historyList_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (history.words.size() > 0) {
-		defOfWord->Text = convertFrom(history.words[historyList->SelectedIndex].definition); //xuat definition khi dc chon
+		label13 ->Text = convertFrom(history.words[historyList->SelectedIndex].definition); //xuat definition khi dc chon
 	}
 	if (favoriteList->SelectedIndex != -1) {
 		button13->Enabled = true;

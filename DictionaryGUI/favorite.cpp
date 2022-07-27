@@ -20,7 +20,7 @@ void Favorite::loadFromFile() {
 	std::ifstream ifs;
 	ifs.open("favorite.txt");
 	int i = 0;
-	while (ifs.is_open()) {
+	while (!ifs.eof()) {
 		std::string temp;
 		std::getline(ifs, temp);
 		WordAndDef wad;

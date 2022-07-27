@@ -19,7 +19,7 @@ void History::loadFromFile() {
 		return;
 	std::ifstream ifs;
 	ifs.open("history.txt");
-	while (ifs.is_open()) {
+	while (!ifs.eof()) {
 		std::string temp;
 		std::getline(ifs, temp);
 		WordAndDef wad;
