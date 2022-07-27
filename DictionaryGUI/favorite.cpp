@@ -30,7 +30,6 @@ void Favorite::loadFromFile() {
 		ifs >> temp2;
 		dictionaryNo.push_back(temp2);
 	}
-	}
 	ifs.close();
 	initDefinition();
 }
