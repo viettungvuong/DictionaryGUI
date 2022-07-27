@@ -31,4 +31,6 @@ void History::addToHistory(WordAndDef wad, int dictionaryNo) {
 	words.push_back(wad);
 	this->dictionaryNo.push_back(dictionaryNo); //luu la thuoc tu dien nao
 	saveToFile();
+
+
 }
