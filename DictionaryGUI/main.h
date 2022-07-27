@@ -1407,17 +1407,23 @@ private: System::Void textBox1_TextChanged(System::Object^ sender, System::Event
 private: System::Void suggestedWords_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (suggestedWords->SelectedIndex != -1) {
 		int i = suggestedWords->SelectedIndex;
-		button8->Enabled = true;
+		label1->Text = convertFrom(suggesting[i].definition); //xuat definition khi dc chon
 		textBox1->Text = convertFrom(suggesting[i].word);
 		//la do suggesting hay sao
-		label1->Text = convertFrom(suggesting[i].definition); //xuat definition khi dc chon
 		WordAndDef wad;
 		wad.word = convertTo(textBox1->Text);
 		wad.definition = convertTo(label1->Text);
 		history.addToHistory(wad, currentSet); //them vao history
+		v2ListView(history.words, historyList);
+		button8->Enabled = true;
+		button15->Enabled = true;
 	}
 	else
+	{
 		button8->Enabled = false;
+		button15->Enabled = false;
+	}
+
 }
 private: System::Void favoriteList_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 	if (favorite.words.size() > 0) {
