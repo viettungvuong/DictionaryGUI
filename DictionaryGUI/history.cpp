@@ -1,6 +1,7 @@
 #include "history.h"
 #include "functions.h"
 #include <fstream>
+#include <sstream>
 void History::initDefinition() {
 	for (int i = 0; i < words.size(); i++) {
 		words[i].definition = *ProgramData::listOfTree[dictionaryNo[i]].search4keyword(words[i].word)->definition;
@@ -25,9 +26,12 @@ void History::loadFromFile() {
 		WordAndDef wad;
 		wad.word = temp;
 		words.push_back(wad);
-		int temp2;
-		ifs >> temp2;
-		dictionaryNo.push_back(temp2);
+		std::string temp2;
+		std::getline(ifs, temp2);
+		int a;
+		std::stringstream ss;
+		ss << temp2; ss >> a;
+		dictionaryNo.push_back(a);
 	}
 	words.pop_back();
 	ifs.close();

@@ -8,3 +8,5 @@ francium
 2
 francium
 2
+ascendancy
+2
